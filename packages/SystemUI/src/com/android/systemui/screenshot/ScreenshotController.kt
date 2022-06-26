@@ -46,6 +46,7 @@ import com.android.systemui.broadcast.BroadcastDispatcher
 import com.android.systemui.broadcast.BroadcastSender
 import com.android.systemui.clipboardoverlay.ClipboardOverlayController
 import com.android.systemui.dagger.qualifiers.Main
+import com.android.systemui.qs.pipeline.domain.interactor.PanelInteractor
 import com.android.systemui.res.R
 import com.android.systemui.screenshot.ActionIntentCreator.createLongScreenshotIntent
 import com.android.systemui.screenshot.ScreenshotShelfViewProxy.ScreenshotViewCallback
@@ -81,6 +82,7 @@ internal constructor(
     private val screenshotHandler: TimeoutHandler,
     private val broadcastSender: BroadcastSender,
     private val broadcastDispatcher: BroadcastDispatcher,
+    private val panelInteractor: PanelInteractor,
     private val userManager: UserManager,
     private val assistContentRequester: AssistContentRequester,
     private val messageContainerController: MessageContainerController,
@@ -400,6 +402,8 @@ internal constructor(
             {
                 val intent = createLongScreenshotIntent(owner, context)
                 context.startActivity(intent)
+
+                panelInteractor.collapsePanels()
             },
             { _: Rect, onTransitionEnd: Runnable, _: LongScreenshot ->
                 onTransitionEnd.run()
