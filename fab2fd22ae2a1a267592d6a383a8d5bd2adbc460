@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4377201a_48db7ac3",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt",
+        "patchSetId": 26
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-10-25T20:47:32Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "ce24acbd_73c98cf3",
+      "revId": "fab2fd22ae2a1a267592d6a383a8d5bd2adbc460",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15cae3a3_6de129f2",
@@ -35,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69bde753_097ec456",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/UdfpsHelper.kt",
+        "patchSetId": 26
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-10-25T20:47:32Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "15cae3a3_6de129f2",
+      "revId": "fab2fd22ae2a1a267592d6a383a8d5bd2adbc460",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f9eee5c_274160a9",
@@ -48,6 +84,30 @@
       "writtenOn": "2024-10-25T20:32:20Z",
       "side": 1,
       "message": "```suggestion\n            shadeInteractor.isShadeTouchable.collect {\n                view.isVisible \u003d it\n            }\n```",
+      "range": {
+        "startLine": 202,
+        "startChar": 12,
+        "endLine": 204,
+        "endChar": 13
+      },
+      "revId": "fab2fd22ae2a1a267592d6a383a8d5bd2adbc460",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79bbbfa2_9c9c74a5",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/UdfpsHelper.kt",
+        "patchSetId": 26
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-10-25T20:47:32Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "9f9eee5c_274160a9",
       "range": {
         "startLine": 202,
         "startChar": 12,
