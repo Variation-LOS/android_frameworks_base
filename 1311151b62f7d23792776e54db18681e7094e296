@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25733ce8_c767b907",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2024-10-25T13:21:11Z",
+      "side": 1,
+      "message": "* Fixed the issue where dim layer is not visible when transitioning from lockscreen to alternate bouncer (When interacting with notifications from lockscreen)\n* Fixed the issue where dim layer is not visible on doze pulse (While also ensuring it isn\u0027t visible on AOD)",
+      "revId": "1311151b62f7d23792776e54db18681e7094e296",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
