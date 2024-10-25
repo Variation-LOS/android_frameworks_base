@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ddf830d_32358607",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2024-10-25T13:27:50Z",
+      "side": 1,
+      "message": "Applying",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 7
+      },
+      "revId": "1311151b62f7d23792776e54db18681e7094e296",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "25733ce8_c767b907",
