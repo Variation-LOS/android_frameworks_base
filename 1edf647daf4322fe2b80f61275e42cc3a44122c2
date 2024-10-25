@@ -52,6 +52,24 @@
       "parentUuid": "6a7720aa_6abad27d",
       "revId": "1edf647daf4322fe2b80f61275e42cc3a44122c2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21711eba_ef0cc02d",
+        "filename": "packages/SystemUI/proguard.flags",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 24334
+      },
+      "writtenOn": "2024-10-25T12:03:04Z",
+      "side": 1,
+      "message": "It applies for all sysui impl.\n\nwhat about SystemUIGo?",
+      "parentUuid": "1c9d2a50_ea21b7e0",
+      "revId": "1edf647daf4322fe2b80f61275e42cc3a44122c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
