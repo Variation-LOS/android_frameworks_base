@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c324db1d_0d6235bd",
+        "filename": "packages/SystemUI/src/com/android/systemui/screenrecord/RecordingService.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-10-26T08:37:53Z",
+      "side": 1,
+      "message": "```suggestion\n        if (countGroupNotifications() \u003c 1) {\n            return; // only post after we show the 2nd notification\n        }\n```",
+      "range": {
+        "startLine": 475,
+        "startChar": 8,
+        "endLine": 476,
+        "endChar": 67
+      },
+      "revId": "6a52d1d6c7696740b6ba9d8a2cc45c1bf7a4bb59",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5761878_bc4cdfe1",
+        "filename": "packages/SystemUI/src/com/android/systemui/screenrecord/RecordingService.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-10-26T08:37:53Z",
+      "side": 1,
+      "message": "```suggestion\n        if (countGroupNotifications() \u003e\u003d 1) {\n            return; // dismiss only when we have one notification left\n        }\n```",
+      "range": {
+        "startLine": 492,
+        "startChar": 8,
+        "endLine": 493,
+        "endChar": 70
+      },
+      "revId": "6a52d1d6c7696740b6ba9d8a2cc45c1bf7a4bb59",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c1cca67_58a59bb6",
+        "filename": "packages/SystemUI/src/com/android/systemui/screenrecord/RecordingService.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-10-26T08:37:53Z",
+      "side": 1,
+      "message": "```suggestion\n        if (countGroupNotifications() \u003e 0) {\n            return; // only dismiss when we cancel the last group notification\n        }\n```",
+      "range": {
+        "startLine": 498,
+        "startChar": 7,
+        "endLine": 499,
+        "endChar": 17
+      },
+      "revId": "6a52d1d6c7696740b6ba9d8a2cc45c1bf7a4bb59",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce93ca02_dc37c774",
+        "filename": "packages/SystemUI/src/com/android/systemui/screenrecord/RecordingService.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-10-26T08:37:53Z",
+      "side": 1,
+      "message": "```suggestion\n            if (id !\u003d NOTIF_BASE_ID \u0026\u0026 id !\u003d PROGRESS_NOTIF_ID \u0026\u0026 id !\u003d ERROR_NOTIF_ID) {\n                count++;\n            }\n```",
+      "range": {
+        "startLine": 508,
+        "startChar": 12,
+        "endLine": 509,
+        "endChar": 24
+      },
+      "revId": "6a52d1d6c7696740b6ba9d8a2cc45c1bf7a4bb59",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
