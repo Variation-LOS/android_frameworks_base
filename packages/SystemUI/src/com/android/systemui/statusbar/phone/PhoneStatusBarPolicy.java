@@ -840,6 +840,7 @@ public class PhoneStatusBarPolicy
     public void appTransitionFinished(int displayId) {
         if (mDisplayId == displayId) {
             updateProfileIcon();
+            updateFirewall();
             registerBlockedStatusChangedCallbackForLastResumedActivityUid();
         }
     }
