@@ -23,10 +23,13 @@ import android.content.res.Resources;
 import android.view.View;
 
 import com.android.systemui.res.R;
+import com.android.systemui.Dependency;
+import com.android.systemui.tuner.TunerService;
+
 
 import org.lineageos.internal.statusbar.NetworkTraffic;
 
-public final class PhoneStatusBarTransitions extends BarTransitions {
+public final class PhoneStatusBarTransitions extends BarTransitions implements TunerService.Tunable {
     private static final float ICON_ALPHA_WHEN_NOT_OPAQUE = 1;
     private static final float ICON_ALPHA_WHEN_LIGHTS_OUT_BATTERY_CLOCK = 0.5f;
     private static final float ICON_ALPHA_WHEN_LIGHTS_OUT_NON_BATTERY_CLOCK = 0;
@@ -35,6 +38,16 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
 
     private boolean mIsHeadsUp;
 
+    /**
+     * @LineageExtension
+     */
+    private boolean mIsForceBlackEnabled;
+
+    /**
+     * @LineageExtension
+     */
+    private String DARK_MODE_KEY = "dark_statusbar";
+    
     private View mStartSide, mStatusIcons, mBattery;
     private NetworkTraffic mNetworkTrafficStart, mNetworkTrafficCenter, mNetworkTrafficEnd;
     private Animator mCurrentAnimation;
@@ -55,8 +68,26 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         mNetworkTrafficStart.setViewPosition(0);        /* start side display */
         mNetworkTrafficCenter.setViewPosition(1);       /* center display */
         mNetworkTrafficEnd.setViewPosition(2);          /* end side display */
+	mIsForceBlackEnabled = false; 
         applyModeBackground(-1, getMode(), false /*animate*/);
         applyMode(getMode(), false /*animate*/);
+	listenTunables();
+    }
+
+    /**
+     * @LineageExtension
+     */
+    private void listenTunables(){
+        TunerService tunerService = Dependency.get(TunerService.class);
+	tunerService.addTunable(this, DARK_MODE_KEY);
+    }
+
+    @Override
+    public void onTuningChanged(String key, String newValue){
+	 if (DARK_MODE_KEY.equals(key)){
+	     mIsForceBlackEnabled = "1".equals(newValue);
+	     applyMode(getMode(), true);
+	 }
     }
 
     public ObjectAnimator animateTransitionTo(View v, float toAlpha) {
@@ -108,6 +139,15 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         // We want the icon to be fully visible when the HUN appears, so just immediately change the
         // icon visibility and don't animate.
         applyMode(getMode(), /* animate= */ false);
+    }
+
+    @Override
+    public int getMode(){
+	if (mIsForceBlackEnabled) {
+	    return MODE_OPAQUE;
+	} else {
+	    return super.getMode();
+	}
     }
 
     private void applyMode(int mode, boolean animate) {
