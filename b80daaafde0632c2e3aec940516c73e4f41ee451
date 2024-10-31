@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8921fb2_7142f468",
+        "filename": "packages/SystemUI/src/com/android/systemui/privacy/PrivacyConfig.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2024-10-31T16:38:52Z",
+      "side": 1,
+      "message": "This line (and its import) is what\u0027s new, and why we don\u0027t need this change anymore.",
+      "revId": "b80daaafde0632c2e3aec940516c73e4f41ee451",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
