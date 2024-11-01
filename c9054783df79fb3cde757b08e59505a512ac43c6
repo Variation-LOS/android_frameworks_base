@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42ca991e_38eb27ca",
+        "filename": "packages/SystemUI/src/com/android/systemui/theme/ThemeOverlayController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-11-01T14:52:02Z",
+      "side": 1,
+      "message": "This looks wrong because fOverlays is always null, but I guess we never hit this since we return earlier?",
+      "range": {
+        "startLine": 901,
+        "startChar": 66,
+        "endLine": 901,
+        "endChar": 75
+      },
+      "revId": "c9054783df79fb3cde757b08e59505a512ac43c6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
