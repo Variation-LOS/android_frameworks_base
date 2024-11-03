@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8325868f_54c81312",
+        "filename": "packages/SystemUI/src/com/android/systemui/theme/ThemeOverlayApplier.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-11-03T12:05:08Z",
+      "side": 1,
+      "message": "This breaks SystemUITests",
+      "range": {
+        "startLine": 208,
+        "startChar": 12,
+        "endLine": 208,
+        "endChar": 29
+      },
+      "revId": "30a19e435e79f9ec3bc94907de6fc5f2258b5d97",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
