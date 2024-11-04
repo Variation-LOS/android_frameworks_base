@@ -16,6 +16,24 @@
       "message": "Builds for and runs on Moto G5 Cedric. THANK YOU!",
       "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a6350ae_dff1fe76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32620
+      },
+      "writtenOn": "2024-11-04T18:01:26Z",
+      "side": 1,
+      "message": "This might be a basic question (I’m not very experienced with Gerrit), but how do you build with the security patches that L R keeps backporting to cm-14.1? I guess the real question here is how to sync them. I tried with `repopick -t n-asb-2024-10` but that gives merge conflicts (I guess it doesn\u0027t apply older topics).",
+      "parentUuid": "f18aaa05_9ebde31b",
+      "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
