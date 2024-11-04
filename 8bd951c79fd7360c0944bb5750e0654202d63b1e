@@ -74,6 +74,30 @@
       },
       "revId": "8bd951c79fd7360c0944bb5750e0654202d63b1e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e541f365_95b250ef",
+        "filename": "packages/SystemUI/src/com/android/systemui/theme/ThemeOverlayApplier.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-11-04T20:50:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a069bd6c_ceadbe9b",
+      "range": {
+        "startLine": 302,
+        "startChar": 0,
+        "endLine": 302,
+        "endChar": 95
+      },
+      "revId": "8bd951c79fd7360c0944bb5750e0654202d63b1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
