@@ -34,6 +34,29 @@
       "parentUuid": "675e4c85_e0c5eed5",
       "revId": "8bd951c79fd7360c0944bb5750e0654202d63b1e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a069bd6c_ceadbe9b",
+        "filename": "packages/SystemUI/src/com/android/systemui/theme/ThemeOverlayApplier.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-04T20:07:54Z",
+      "side": 1,
+      "message": "```suggestion\n        OverlayInfo overlayInfo \u003d mOverlayManager.getOverlayInfo(name, UserHandle.CURRENT);\n        if (info !\u003d null)\n            return info.getOverlayIdentifier();\n        throw new IllegalStateException(\"No overlay found for \" + name);\n```",
+      "range": {
+        "startLine": 302,
+        "startChar": 0,
+        "endLine": 302,
+        "endChar": 95
+      },
+      "revId": "8bd951c79fd7360c0944bb5750e0654202d63b1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
