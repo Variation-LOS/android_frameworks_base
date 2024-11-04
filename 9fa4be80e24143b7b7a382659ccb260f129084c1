@@ -70,6 +70,24 @@
       "parentUuid": "f1ba4397_a78ac0c8",
       "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5024adb4_5c6e3fba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 12604
+      },
+      "writtenOn": "2024-11-04T22:05:17Z",
+      "side": 1,
+      "message": "322452 might need to be applied manually.  I just restored that commit last week because it was a dependency on a new ASB. Perhaps something got messed up when that happened.",
+      "parentUuid": "0560a6d4_9c058612",
+      "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
