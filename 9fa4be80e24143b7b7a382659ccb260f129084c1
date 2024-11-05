@@ -88,6 +88,23 @@
       "parentUuid": "0560a6d4_9c058612",
       "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c920e0bd_46d59927",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25691
+      },
+      "writtenOn": "2024-11-05T03:27:38Z",
+      "side": 1,
+      "message": "The way I do it:\nbash\ncd ~/nougat/lineage14\nsource build/envsetup.sh\nrepo sync\n. lineageos-gerrit-repopick-topic.sh\nrepopick_topic n-asb-2021-09\n...\nrepopick_topic n-asb-2022-08\n(repopick_topic n-asb-2022-09 crash)\nrepopick -f 337998\nrepopick -f 337999\nrepopick -f 338000\nrepopick -f 338003\nrepopick -f 338382\nrepopick -f 338384\nrepopick -f 338385\nrepopick -f 338386\nrepopick_topic n-asb-2022-10\n...\nrepopick_topic n-asb-2024-11\nexport LC_ALL\u003dC\nbrunch cedric\n\nI\u0027m on mobile data now and will build next weekend. The last couple of month I\u0027ve skipped the repo sync part and each month only applied the current patches.",
+      "revId": "9fa4be80e24143b7b7a382659ccb260f129084c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
