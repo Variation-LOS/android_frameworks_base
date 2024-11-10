@@ -666,6 +666,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Click volume down + power for partial screenshot
     boolean mClickPartialScreenshot;
 
+    // Home and back to sleep on Android TV
+    boolean mBackAndHomeSleep;
+
     private boolean mPendingKeyguardOccluded;
     private boolean mKeyguardOccludedChanged;
 
@@ -1115,6 +1118,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(LineageSettings.System.getUriFor(
                     LineageSettings.System.VOLUME_ANSWER_CALL), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(LineageSettings.System.getUriFor(
+                    LineageSettings.System.BACK_AND_HOME_SLEEP), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2921,6 +2927,22 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                             return 0;
                         }
                     });
+
+            mKeyCombinationManager.addRule(
+                    new TwoKeysCombinationRule(KEYCODE_BACK, KEYCODE_HOME) {
+                        @Override
+                        boolean preCondition() {
+                            return mBackAndHomeSleep;
+                        }
+                        @Override
+                        void execute() {
+                            if (mBackAndHomeSleep)
+                                mPowerManager.goToSleep(SystemClock.uptimeMillis());
+                        }
+                        @Override
+                        void cancel() {
+                        }
+                    });
         }
     }
 
@@ -3390,6 +3412,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                             UserHandle.USER_CURRENT) == 1;
             mCameraLaunch = LineageSettings.System.getIntForUser(resolver,
                     LineageSettings.System.CAMERA_LAUNCH, 0,
+                    UserHandle.USER_CURRENT) == 1;
+            mBackAndHomeSleep = LineageSettings.System.getIntForUser(resolver,
+                    LineageSettings.System.BACK_AND_HOME_SLEEP, 1,
                     UserHandle.USER_CURRENT) == 1;
 
             // Configure wake gesture.
