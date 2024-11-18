@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0405720b_429068db",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4256,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-11-18T20:34:18Z",
+      "side": 1,
+      "message": "```suggestion\n            mPermissionManager.setDefaultPermissionGrantFingerprint(\n                    Build.VERSION.INCREMENTAL, userId);\n```",
+      "range": {
+        "startLine": 4256,
+        "startChar": 0,
+        "endLine": 4256,
+        "endChar": 103
+      },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddc13eac_18417139",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4438,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-11-18T20:34:18Z",
+      "side": 1,
+      "message": "```suggestion\n            mPermissionManager.setDefaultPermissionGrantFingerprint(\n                    Build.VERSION.INCREMENTAL, userId);\n```",
+      "range": {
+        "startLine": 4438,
+        "startChar": 0,
+        "endLine": 4438,
+        "endChar": 103
+      },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48acb729_23fc98ff",
+        "filename": "services/core/java/com/android/server/pm/permission/PermissionManagerServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-11-18T20:34:18Z",
+      "side": 1,
+      "message": "```suggestion\n        return mPackageManagerInt.isPermissionUpgradeNeeded(userId)\n                ? null : Build.VERSION.INCREMENTAL;\n```",
+      "range": {
+        "startLine": 4647,
+        "startChar": 0,
+        "endLine": 4647,
+        "endChar": 103
+      },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
