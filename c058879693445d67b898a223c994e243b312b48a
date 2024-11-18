@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ffc54d1_d2e09e23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-11-18T20:34:38Z",
+      "side": 1,
+      "message": "Could be upstreamed as well?",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0405720b_429068db",
@@ -20,6 +37,23 @@
         "endLine": 4256,
         "endChar": 103
       },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e86c4d88_1d47e333",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4256,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-11-18T20:34:38Z",
+      "side": 1,
+      "message": "line length",
       "revId": "c058879693445d67b898a223c994e243b312b48a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -49,6 +83,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "252afbb5_2f685ba3",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4438,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-11-18T20:34:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48acb729_23fc98ff",
         "filename": "services/core/java/com/android/server/pm/permission/PermissionManagerServiceImpl.java",
         "patchSetId": 1
@@ -66,6 +117,23 @@
         "endLine": 4647,
         "endChar": 103
       },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ced79b7_9cffe2dd",
+        "filename": "services/core/java/com/android/server/pm/permission/PermissionManagerServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-11-18T20:34:38Z",
+      "side": 1,
+      "message": "same",
       "revId": "c058879693445d67b898a223c994e243b312b48a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
