@@ -76,6 +76,48 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e54b494_9a594d6a",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4256,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "0405720b_429068db",
+      "range": {
+        "startLine": 4256,
+        "startChar": 0,
+        "endLine": 4256,
+        "endChar": 103
+      },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2934c5bf_58c3b6b5",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4256,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e86c4d88_1d47e333",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddc13eac_18417139",
@@ -116,6 +158,48 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9258dab9_344d7f3f",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4438,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "ddc13eac_18417139",
+      "range": {
+        "startLine": 4438,
+        "startChar": 0,
+        "endLine": 4438,
+        "endChar": 103
+      },
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac9d967a_12c39b2d",
+        "filename": "services/core/java/com/android/server/pm/PackageManagerService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4438,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "252afbb5_2f685ba3",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48acb729_23fc98ff",
@@ -152,6 +236,48 @@
       "writtenOn": "2024-11-18T20:34:38Z",
       "side": 1,
       "message": "same",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc0bd538_f4d63854",
+        "filename": "services/core/java/com/android/server/pm/permission/PermissionManagerServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ced79b7_9cffe2dd",
+      "revId": "c058879693445d67b898a223c994e243b312b48a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfc9962f_69599b93",
+        "filename": "services/core/java/com/android/server/pm/permission/PermissionManagerServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-18T20:35:38Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "48acb729_23fc98ff",
+      "range": {
+        "startLine": 4647,
+        "startChar": 0,
+        "endLine": 4647,
+        "endChar": 103
+      },
       "revId": "c058879693445d67b898a223c994e243b312b48a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
