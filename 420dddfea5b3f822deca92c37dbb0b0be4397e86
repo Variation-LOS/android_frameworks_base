@@ -16,6 +16,23 @@
       "message": "Sorry, only noticed this today.",
       "revId": "420dddfea5b3f822deca92c37dbb0b0be4397e86",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c89dfaf2_1e003451",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2024-11-20T17:52:39Z",
+      "side": 1,
+      "message": "I think this change is okay.\n\n1. Existing users who already have the change this fixes, will not be impacted by this fix. I think that is fine. As of now, their firewall settings \"are what they are\"; regardless of what may have happened, we don\u0027t want to change those settings unexpectedly now!\n2. With this change, new users should be properly migrated.\n\nBut that being said, it would be nice to test it, and also to know exactly what happened to devices that didn\u0027t actually get this migration.",
+      "revId": "420dddfea5b3f822deca92c37dbb0b0be4397e86",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
