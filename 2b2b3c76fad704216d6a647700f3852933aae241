@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71cc65f5_d8e42036",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2024-11-20T17:53:48Z",
+      "side": 1,
+      "message": "I don\u0027t want to duplicate discussion on both changes so I\u0027m setting this as WIP. See other change: https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/407772",
+      "revId": "2b2b3c76fad704216d6a647700f3852933aae241",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
