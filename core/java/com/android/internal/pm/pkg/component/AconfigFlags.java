@@ -72,6 +72,9 @@ public class AconfigFlags {
                 (Process.myUid() == Process.SYSTEM_UID) ? DeviceProtos.parsedFlagsProtoPaths()
                         : Arrays.asList(DeviceProtos.PATHS);
         for (String fileName : defaultFlagProtoFiles) {
+            File f = new File(fileName);
+            if (!f.isFile() || !f.canRead())
+                continue;
             try (var inputStream = new FileInputStream(fileName)) {
                 loadAconfigDefaultValues(inputStream.readAllBytes());
             } catch (IOException e) {
@@ -107,6 +110,8 @@ public class AconfigFlags {
 
         final var settingsFile = new File(Environment.getUserSystemDirectory(0),
                 "settings_config.xml");
+        if (!settingsFile.isFile() || !settingsFile.canRead())
+            return;
         try (var inputStream = new FileInputStream(settingsFile)) {
             TypedXmlPullParser parser = Xml.resolvePullParser(inputStream);
             if (parser.next() != XmlPullParser.END_TAG && "settings".equals(parser.getName())) {
