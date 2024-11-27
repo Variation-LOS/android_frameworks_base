@@ -22,6 +22,30 @@
       },
       "revId": "c5269ad1d1fc7cffa602892b99bb09d396d598d9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b622a5b_859f962c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 31334
+      },
+      "writtenOn": "2024-11-27T17:40:29Z",
+      "side": 1,
+      "message": "\"Fixes when triggering edge long swipe gesture in an app that do not support predictive back gesture, app does not respond to touch event.\"\n\nIs this ok?",
+      "parentUuid": "c61b6d85_36545f5b",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 0
+      },
+      "revId": "c5269ad1d1fc7cffa602892b99bb09d396d598d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
