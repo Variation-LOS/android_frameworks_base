@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d353af16_a5d2edd5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24334
+      },
+      "writtenOn": "2024-12-04T17:38:37Z",
+      "side": 1,
+      "message": "Please confirm if this happens in LineageOS. I don\u0027t have an udfps device with LineageOS to test.",
+      "revId": "48ff4c95160cb44ca8f87f3fcd94969f6a266211",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
