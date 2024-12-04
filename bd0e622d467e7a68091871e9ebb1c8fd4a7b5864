@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09b2d330_185eea58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29742
+      },
+      "writtenOn": "2024-12-04T02:51:39Z",
+      "side": 1,
+      "message": "Confirmed working fine with dirty flashing",
+      "revId": "bd0e622d467e7a68091871e9ebb1c8fd4a7b5864",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
