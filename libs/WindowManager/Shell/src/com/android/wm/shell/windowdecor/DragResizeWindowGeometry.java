@@ -306,7 +306,8 @@ final class DragResizeWindowGeometry {
     public boolean equals(Object obj) {
         if (obj == null) return false;
         if (this == obj) return true;
-        if (!(obj instanceof DragResizeWindowGeometry other)) return false;
+        if (!(obj instanceof DragResizeWindowGeometry)) return false;
+        DragResizeWindowGeometry other = (DragResizeWindowGeometry)obj;
 
         return this.mTaskCornerRadius == other.mTaskCornerRadius
                 && this.mTaskSize.equals(other.mTaskSize)
@@ -419,7 +420,8 @@ final class DragResizeWindowGeometry {
         public boolean equals(Object obj) {
             if (obj == null) return false;
             if (this == obj) return true;
-            if (!(obj instanceof TaskCorners other)) return false;
+            if (!(obj instanceof TaskCorners)) return false;
+            TaskCorners other = (TaskCorners)obj;
 
             return this.mCornerSize == other.mCornerSize
                     && this.mLeftTopCornerBounds.equals(other.mLeftTopCornerBounds)
@@ -509,7 +511,8 @@ final class DragResizeWindowGeometry {
         public boolean equals(Object obj) {
             if (obj == null) return false;
             if (this == obj) return true;
-            if (!(obj instanceof TaskEdges other)) return false;
+            if (!(obj instanceof TaskEdges)) return false;
+            TaskEdges other = (TaskEdges)obj;
 
             return this.mTopEdgeBounds.equals(other.mTopEdgeBounds)
                     && this.mLeftEdgeBounds.equals(other.mLeftEdgeBounds)

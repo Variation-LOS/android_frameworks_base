@@ -772,7 +772,9 @@ public abstract class WindowDecoration<T extends View & TaskFocusStateConsumer>
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (!(o instanceof WindowDecoration.WindowDecorationInsets that)) return false;
+            if (!(o instanceof WindowDecoration.WindowDecorationInsets)) return false;
+            WindowDecoration.WindowDecorationInsets that = (WindowDecoration.WindowDecorationInsets)o;
+
             return Objects.equals(mToken, that.mToken) && Objects.equals(mOwner,
                     that.mOwner) && Objects.equals(mFrame, that.mFrame)
                     && Objects.deepEquals(mBoundingRects, that.mBoundingRects);
