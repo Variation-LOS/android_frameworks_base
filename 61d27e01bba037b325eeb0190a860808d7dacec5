@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97709a31_8e9af88f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-10T09:50:02Z",
+      "side": 1,
+      "message": "this is proper java syntax, it\u0027s just a tool they use that doesn\u0027t support this syntax",
+      "revId": "61d27e01bba037b325eeb0190a860808d7dacec5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
