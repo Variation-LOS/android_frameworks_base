@@ -190,7 +190,6 @@ import android.content.pm.SELinuxUtil;
 import android.content.pm.ServiceInfo;
 import android.content.pm.SharedLibraryInfo;
 import android.content.pm.Signature;
-import android.content.pm.SigningInfo;
 import android.content.pm.SuspendDialogInfo;
 import android.content.pm.UserInfo;
 import android.content.pm.VerifierDeviceIdentity;
@@ -4266,21 +4265,30 @@ public class PackageManagerService extends IPackageManager.Stub
 
             packageInfo.packageName = packageInfo.applicationInfo.packageName =
                     resolveExternalPackageNameLPr(p);
-            generateFakeSignature(p).ifPresent(fakeSignature -> {
-                packageInfo.signatures = new Signature[]{fakeSignature};
-                try {
-                    packageInfo.signingInfo = new SigningInfo(
-                            new SigningDetails(
-                                    packageInfo.signatures,
-                                    SigningDetails.SignatureSchemeVersion.SIGNING_BLOCK_V3,
-                                    PackageParser.toSigningKeys(packageInfo.signatures),
-                                    null
-                            )
-                    );
-                } catch (CertificateException e) {
-                    Slog.e(TAG, "Caught an exception when creating signing keys: ", e);
-                }
-            });
+             generateFakeSignature(p).ifPresent(fakeSignature -> {
+                         packageInfo.signatures = new Signature[]{fakeSignature};
+                         try {
+                                     List<PublicKey> keysList = new ArrayList<>();
+                                     for (Signature signature : packageInfo.signatures) {
+                                                 keysList.add(CertificateFactory.getInstance("X.509")
+                                                                 .generateCertificate(new ByteArrayInputStream(signature.toByteArray()))
+                                                                 .getPublicKey());
+                                     }
+
+                                     ArraySet<PublicKey> keys = new ArraySet<>(keysList);
+
+                                     packageInfo.signingInfo = new SigningInfo(
+                                                 new SigningDetails(
+                                                             packageInfo.signatures,
+                                                             SigningDetails.SignatureSchemeVersion.SIGNING_BLOCK_V3,
+                                                             keys, // Directly using the keys set here
+                                                             null
+                                                 )
+                                     );
+                         } catch (CertificateException e) {
+                                     Slog.e(TAG, "Caught an exception when creating signing keys: ", e);
+                         }
+             });
 
             return packageInfo;
         } else if ((flags & MATCH_UNINSTALLED_PACKAGES) != 0 && state.isAvailable(flags)) {
