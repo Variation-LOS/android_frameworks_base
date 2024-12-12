@@ -3379,6 +3379,14 @@ public class PackageManagerService extends IPackageManager.Stub
 
                 generateFakeSignature(p).ifPresent(fakeSignature -> {
                     packageInfo.signatures = new Signature[]{fakeSignature};
+                    packageInfo.signingInfo = new SigningInfo(
+                            new SigningDetails(
+                                    new Signature[] {fakeSignature},
+                                    SigningDetails.SignatureSchemeVersion.SIGNING_BLOCK_V3,
+                                    null,
+                                    null
+                            )
+                    );
                 });
 
                 return packageInfo;
