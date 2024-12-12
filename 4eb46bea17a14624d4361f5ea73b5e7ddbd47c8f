@@ -16,6 +16,23 @@
       "message": "maybe in the future we want to check what GMS has in the other signing details other fields, certificate history might be one of them :)",
       "revId": "4eb46bea17a14624d4361f5ea73b5e7ddbd47c8f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34158dcd_3cac991e",
+        "filename": "services/core/java/com/android/server/pm/ComputerEngine.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-12T16:31:07Z",
+      "side": 1,
+      "message": "```suggestion\n                                SigningDetails.toSigningKeys(packageInfo.signatures),\n```",
+      "revId": "4eb46bea17a14624d4361f5ea73b5e7ddbd47c8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
