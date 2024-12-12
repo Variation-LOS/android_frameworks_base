@@ -1588,6 +1588,14 @@ public class ComputerEngine implements Computer {
 
             generateFakeSignature(p).ifPresent(fakeSignature -> {
                 packageInfo.signatures = new Signature[]{fakeSignature};
+                packageInfo.signingInfo = new SigningInfo(
+                        new SigningDetails(
+                                packageInfo.signatures,
+                                SigningDetails.SignatureSchemeVersion.SIGNING_BLOCK_V3,
+                                null,
+                                null
+                        )
+                );
             });
 
             return packageInfo;
