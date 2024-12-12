@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de3c61f3_346b8be5",
+        "filename": "services/core/java/com/android/server/pm/ComputerEngine.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1593,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-12T16:13:00Z",
+      "side": 1,
+      "message": "```suggestion\n                                packageInfo.signatures,\n```",
+      "range": {
+        "startLine": 1593,
+        "startChar": 32,
+        "endLine": 1593,
+        "endChar": 64
+      },
+      "revId": "90aacef2c19b6b7a6814398ca48f5a489afaea3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
