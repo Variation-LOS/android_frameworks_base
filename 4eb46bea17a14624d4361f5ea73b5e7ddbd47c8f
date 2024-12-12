@@ -69,6 +69,24 @@
       "parentUuid": "c716e3d7_63bda945",
       "revId": "4eb46bea17a14624d4361f5ea73b5e7ddbd47c8f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0424ed93_da6fbb15",
+        "filename": "services/core/java/com/android/server/pm/ComputerEngine.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2024-12-12T17:43:49Z",
+      "side": 1,
+      "message": "private static ArraySet\u003cPublicKey\u003e getSigningKeys(@NonNull Signature[] signatures) {\n        try {\n            return SigningDetails.toSigningKeys(signatures);\n        } catch (CertificateException e) {\n            Slog.e(TAG, \"Caught an exception when creating signing keys: \", e);\n        }\n        return null;\n    }",
+      "parentUuid": "3990b396_c19c4b4f",
+      "revId": "4eb46bea17a14624d4361f5ea73b5e7ddbd47c8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
