@@ -16,6 +16,24 @@
       "message": "repopick fails with merge conflict from\n\nhttps://review.lineageos.org/c/LineageOS/android_frameworks_base/+/411567",
       "revId": "2d79a7ffcc5f4edb217e401be0c0ef49c11b128d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66b4838c_2d2988cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2024-12-17T18:32:01Z",
+      "side": 1,
+      "message": "git config --global pull.rebase false",
+      "parentUuid": "7a31c2da_96979004",
+      "revId": "2d79a7ffcc5f4edb217e401be0c0ef49c11b128d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
