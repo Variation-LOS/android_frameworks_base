@@ -34,6 +34,24 @@
       "parentUuid": "7a31c2da_96979004",
       "revId": "2d79a7ffcc5f4edb217e401be0c0ef49c11b128d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b756075a_b393a3f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29742
+      },
+      "writtenOn": "2024-12-19T08:38:08Z",
+      "side": 1,
+      "message": "repopick topic not conflict now, changes has rebased.\n\nhttps://review.lineageos.org/c/LineageOS/android_frameworks_base/+/411567/2#message-7584a77f69fa9169b41b05e76b7eccc756571ce6",
+      "parentUuid": "66b4838c_2d2988cc",
+      "revId": "2d79a7ffcc5f4edb217e401be0c0ef49c11b128d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
