@@ -34,6 +34,24 @@
       "parentUuid": "e51c0417_d859aa78",
       "revId": "6211ff727dcb2c1b0ec6fff285dd6b1885549aa3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49033d4e_588e7f00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-12-20T17:28:05Z",
+      "side": 1,
+      "message": "Also I would like to rework our settings provider at some point in 2025 which will replace this and the entire lineage settings provider.",
+      "parentUuid": "5665d062_36843dfd",
+      "revId": "6211ff727dcb2c1b0ec6fff285dd6b1885549aa3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
