@@ -16,6 +16,23 @@
       "message": "Please confirm if this happens in LineageOS. I don\u0027t have an udfps device with LineageOS to test.",
       "revId": "48ff4c95160cb44ca8f87f3fcd94969f6a266211",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "307785fa_ee72ecaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-12-20T02:46:18Z",
+      "side": 1,
+      "message": "I have no UDFPS, and every time I touch it, it causes new issues.\n\nLeaving to someone who has it to test.",
+      "revId": "48ff4c95160cb44ca8f87f3fcd94969f6a266211",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
