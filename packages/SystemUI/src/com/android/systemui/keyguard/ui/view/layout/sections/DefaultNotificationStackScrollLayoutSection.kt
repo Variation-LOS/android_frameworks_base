@@ -67,7 +67,7 @@ constructor(
                 connect(
                     R.id.nssl_placeholder,
                     TOP,
-                    R.id.smart_space_barrier_bottom,
+                    R.id.lockscreen_clock_view,
                     BOTTOM,
                     bottomMargin +
                         if (useLargeScreenHeader) {
