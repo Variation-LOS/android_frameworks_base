@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2be3195_aa125db8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34224
+      },
+      "writtenOn": "2024-12-28T18:04:52Z",
+      "side": 1,
+      "message": "Fixed the notifications overlay on the tablet portrait lockscreen",
+      "revId": "369626ebf1d34f7989bfe562182d5ce623bdb8cf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
