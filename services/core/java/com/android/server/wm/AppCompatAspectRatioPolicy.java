@@ -249,9 +249,12 @@ class AppCompatAspectRatioPolicy {
 
         int activityWidth = containingAppWidth;
         int activityHeight = containingAppHeight;
+        final String packageName = mActivityRecord.info.applicationInfo.packageName;
 
         if (containingRatio - aspectRatioToApply > ASPECT_RATIO_ROUNDING_TOLERANCE) {
-            if (containingAppWidth < containingAppHeight) {
+            if (mActivityRecord.shouldForceLongScreen(packageName)) {
+                // Use containingAppWidth/Height for maxActivityWidth/Height when force long screen
+            } else if (containingAppWidth < containingAppHeight) {
                 // Width is the shorter side, so we use that to figure-out what the max. height
                 // should be given the aspect ratio.
                 activityHeight = (int) ((activityWidth * aspectRatioToApply) + 0.5f);
