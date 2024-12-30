@@ -87,6 +87,24 @@
       "parentUuid": "dd4377f8_af2b49db",
       "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55a8c23d_936e9635",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-30T09:49:40Z",
+      "side": 1,
+      "message": "...check is the solution here.\n\nafter all, this should be adding the view, setting constraints for it and then removing it.\n\n(tho when I did it properly-ish, by inflating the layout myself, it didn\u0027t work)",
+      "parentUuid": "51c2f04a_7e5664ff",
+      "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
