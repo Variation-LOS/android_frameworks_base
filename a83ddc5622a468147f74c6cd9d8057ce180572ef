@@ -51,6 +51,24 @@
       "parentUuid": "5e754ecf_ccef5462",
       "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd4377f8_af2b49db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2024-12-30T08:29:09Z",
+      "side": 1,
+      "message": "It is required to be flipped only in removeViews(..)\n\nRest places it is fine. For example in applyConstraints(..) -\u003e Apply constraints to keyguard slice view when smartspace is not enabled. This is fine.\n\nSeems to be google bug.",
+      "parentUuid": "1c88e671_27411f8e",
+      "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
