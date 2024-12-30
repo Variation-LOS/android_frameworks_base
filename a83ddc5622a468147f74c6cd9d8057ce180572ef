@@ -33,6 +33,24 @@
       "message": "I think only fix required here is flipping smartspacecontroller \n\n        if (smartspaceController.isEnabled) return\n\nto\n\n        if (!smartspaceController.isEnabled) return\n\n\nSmartspace and Key Slice view are exclusive. If smartspace controller is enabled, keyguard slice view should be removed. This is how it behaved before migrating here.",
       "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c88e671_27411f8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-30T07:01:00Z",
+      "side": 1,
+      "message": "except the same checks are in all functions here.",
+      "parentUuid": "5e754ecf_ccef5462",
+      "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
