@@ -16,6 +16,23 @@
       "message": "Fixed the notifications overlay on the tablet portrait lockscreen",
       "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e754ecf_ccef5462",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2024-12-30T06:49:43Z",
+      "side": 1,
+      "message": "I think only fix required here is flipping smartspacecontroller \n\n        if (smartspaceController.isEnabled) return\n\nto\n\n        if (!smartspaceController.isEnabled) return\n\n\nSmartspace and Key Slice view are exclusive. If smartspace controller is enabled, keyguard slice view should be removed. This is how it behaved before migrating here.",
+      "revId": "a83ddc5622a468147f74c6cd9d8057ce180572ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
