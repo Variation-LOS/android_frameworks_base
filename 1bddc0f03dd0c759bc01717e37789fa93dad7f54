@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adec544e_21ae6404",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33673
+      },
+      "writtenOn": "2025-01-02T10:17:30Z",
+      "side": 1,
+      "message": "Doesn\u0027t compile because Android 11 and lower is missing toSigningKeys\n\nout/soong/.intermediates/frameworks/base/services/core/services.core.unboosted/android_common/javac/srcjars/frameworks/base/services/core/java/com/android/server/pm/PackageManagerService.java:4539: error: cannot find symbol\n                                    SigningDetails.toSigningKeys(packageInfo.signatures),\n                                                  ^\n  symbol:   method toSigningKeys(Signature[])\n  location: class SigningDetails\n1 error",
+      "revId": "1bddc0f03dd0c759bc01717e37789fa93dad7f54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
