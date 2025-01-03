@@ -34,6 +34,24 @@
       "parentUuid": "adec544e_21ae6404",
       "revId": "1bddc0f03dd0c759bc01717e37789fa93dad7f54",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30b06e90_223375b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20587
+      },
+      "writtenOn": "2025-01-03T19:29:24Z",
+      "side": 1,
+      "message": "@eazyblack40@gmail.com Seems like you accidentally commented on the wrong changeset. Neither the line number nor the code in your error message match this. The function used here is from PackageParser which is at https://github.com/LineageOS/android_frameworks_base/blob/lineage-17.1/core/java/android/content/pm/PackageParser.java#L1484",
+      "parentUuid": "aa648cc1_ebe4b2a0",
+      "revId": "1bddc0f03dd0c759bc01717e37789fa93dad7f54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
