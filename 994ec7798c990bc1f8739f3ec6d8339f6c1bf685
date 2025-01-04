@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73caba81_e44bab99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-04T17:59:05Z",
+      "side": 1,
+      "message": "ah, i did a similar fix myself, but a lot more complicated (for more or less, no reason).",
+      "revId": "994ec7798c990bc1f8739f3ec6d8339f6c1bf685",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
