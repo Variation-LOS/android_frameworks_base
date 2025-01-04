@@ -19,9 +19,11 @@ import android.content.Context
 import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.RotationUtils
 import android.view.Surface
 import android.widget.FrameLayout
 
+import com.android.systemui.biometrics.shared.model.UdfpsOverlayParams
 import com.android.systemui.biometrics.UdfpsDisplayModeProvider
 import com.android.systemui.biometrics.UdfpsSurfaceView
 import com.android.systemui.res.R
@@ -34,9 +36,8 @@ class UdfpsTouchOverlay(context: Context, attrs: AttributeSet?) : FrameLayout(co
     private var ghbmView: UdfpsSurfaceView? = null
     private var udfpsDisplayMode: UdfpsDisplayModeProvider? = null
 
-    // sensorRect may be bigger than the sensor. True sensor dimensions are defined in
-    // overlayParams.sensorBounds
-    var sensorRect = Rect()
+    /** Parameters that affect the position and size of the overlay. */
+    var overlayParams = UdfpsOverlayParams()
 
     /** True after the call to [configureDisplay] and before the call to [unconfigureDisplay]. */
     var isDisplayConfigured: Boolean = false
@@ -65,7 +66,17 @@ class UdfpsTouchOverlay(context: Context, attrs: AttributeSet?) : FrameLayout(co
     private fun doIlluminate(surface: Surface?, onDisplayConfigured: Runnable?) {
         udfpsDisplayMode?.enable {
             onDisplayConfigured?.run()
-            ghbmView?.drawIlluminationDot(RectF(sensorRect))
+
+            var rotatedBounds = overlayParams.sensorBounds
+
+            RotationUtils.rotateBounds(
+                rotatedBounds,
+                overlayParams.naturalDisplayWidth,
+                overlayParams.naturalDisplayHeight,
+                overlayParams.rotation
+            )
+
+            ghbmView?.drawIlluminationDot(RectF(rotatedBounds))
         }
     }
 
