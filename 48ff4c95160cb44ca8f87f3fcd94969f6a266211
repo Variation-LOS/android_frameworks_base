@@ -33,6 +33,24 @@
       "message": "I have no UDFPS, and every time I touch it, it causes new issues.\n\nLeaving to someone who has it to test.",
       "revId": "48ff4c95160cb44ca8f87f3fcd94969f6a266211",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2166e07d_9364fa49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2025-01-04T17:55:06Z",
+      "side": 1,
+      "message": "i can not reproduce the issue from the commit message on my device which uses lhbm.",
+      "parentUuid": "d353af16_a5d2edd5",
+      "revId": "48ff4c95160cb44ca8f87f3fcd94969f6a266211",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
