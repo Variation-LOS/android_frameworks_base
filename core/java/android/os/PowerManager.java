@@ -4110,6 +4110,10 @@ public final class PowerManager {
                                     Binder.restoreCallingIdentity(token);
                                 }
                             }
+
+                            public void  onSuspendResume(boolean isResume) {
+                                // do nothing
+                            }
                         };
                     } else {
                         mCallback = null;

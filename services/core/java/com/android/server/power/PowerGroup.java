@@ -108,7 +108,7 @@ public class PowerGroup {
         mDisplayManagerInternal = displayManagerInternal;
         mWakefulness = wakefulness;
         mReady = false;
-        mSupportsSandman = true;
+        mSupportsSandman = false;
         mLastWakeTime = eventTime;
         mLastSleepTime = eventTime;
     }

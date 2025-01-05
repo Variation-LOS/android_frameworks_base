@@ -142,6 +142,7 @@ filegroup {
         "android/os/IThermalService.aidl",
         "android/os/IPowerManager.aidl",
         "android/os/IWakeLockCallback.aidl",
+        "android/os/IPowerStateCallback.aidl",
     ],
 }
 

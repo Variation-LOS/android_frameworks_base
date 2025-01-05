@@ -75,6 +75,7 @@ import android.os.Handler;
 import android.os.HandlerExecutor;
 import android.os.IBinder;
 import android.os.IPowerManager;
+import android.os.IPowerStateCallback;
 import android.os.IWakeLockCallback;
 import android.os.Looper;
 import android.os.Message;
@@ -86,6 +87,7 @@ import android.os.PowerManager.WakeReason;
 import android.os.PowerManagerInternal;
 import android.os.PowerSaveState;
 import android.os.Process;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.ResultReceiver;
 import android.os.ShellCallback;
@@ -106,6 +108,7 @@ import android.telephony.TelephonyManager;
 import android.util.ArrayMap;
 import android.util.IntArray;
 import android.util.KeyValueListParser;
+import android.util.Log;
 import android.util.LongArray;
 import android.util.PrintWriterPrinter;
 import android.util.Slog;
@@ -171,7 +174,7 @@ public final class PowerManagerService extends SystemService
         implements Watchdog.Monitor {
     private static final String TAG = "PowerManagerService";
 
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     private static final boolean DEBUG_SPEW = DEBUG && true;
 
     // Message: Sent when a user activity timeout occurs to update the power state.
@@ -739,6 +742,10 @@ public final class PowerManagerService extends SystemService
     // Whether to keep dreaming when the device is unplugging.
     private boolean mKeepDreamingWhenUnplugging;
 
+    private boolean mForceSuspendSettingsOn;
+    private final ArrayList<WakeLock> mWakeLocksToResume = new ArrayList<>();
+    private final RemoteCallbackList<IPowerStateCallback> mPowerStateCallbacks = new RemoteCallbackList<>();
+
     private final class DreamManagerStateListener implements
             DreamManagerInternal.DreamManagerStateListener {
         @Override
@@ -788,7 +795,7 @@ public final class PowerManagerService extends SystemService
                     return;
                 }
                 // For now, only the default group supports sandman (dream/AOD).
-                final boolean supportsSandman = groupId == Display.DEFAULT_DISPLAY_GROUP;
+                final boolean supportsSandman = false;
                 final PowerGroup powerGroup = new PowerGroup(
                         groupId,
                         mPowerGroupWakefulnessChangeListener,
@@ -1536,6 +1543,10 @@ public final class PowerManagerService extends SystemService
                 LineageSettings.System.FORCE_SHOW_NAVBAR),
                 false, mSettingsObserver, UserHandle.USER_ALL);
 
+        // register for force_suspend_on
+        resolver.registerContentObserver(Settings.Global.getUriFor("force_suspend_on"),
+                false, mSettingsObserver, UserHandle.USER_ALL);
+
         // Register for broadcasts from other components of the system.
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -1652,6 +1663,9 @@ public final class PowerManagerService extends SystemService
                 (mWakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1;
         mAlwaysOnEnabled = mAmbientDisplayConfiguration.alwaysOnEnabled(UserHandle.USER_CURRENT);
 
+        mForceSuspendSettingsOn
+                = Settings.Global.getInt(mContext.getContentResolver(), "force_suspend_on", 0) == 1;
+
         if (mSupportsDoubleTapWakeConfig) {
             boolean doubleTapWakeEnabled = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.DOUBLE_TAP_TO_WAKE, DEFAULT_DOUBLE_TAP_TO_WAKE,
@@ -1720,6 +1734,9 @@ public final class PowerManagerService extends SystemService
                     throw new SecurityException("Caller does not have access to display");
                 }
             }
+
+            // FIXME: whar aboud displayId == Display.INVALID_DISPLAY
+            mForceSuspendActive = false;
 
             if (DEBUG_SPEW) {
                 Slog.d(TAG, "acquireWakeLockInternal: lock=" + Objects.hashCode(lock)
@@ -2755,6 +2772,10 @@ public final class PowerManagerService extends SystemService
             if (mBatterySaverSupported) {
                 mBatterySaverStateMachine.setBatteryStatus(mIsPowered, mBatteryLevel,
                         mBatteryLevelLow);
+            }
+
+            if (wasPowered && !mIsPowered) {
+                // FIXME: should goto sleep if display off
             }
         }
     }
@@ -3914,6 +3935,7 @@ public final class PowerManagerService extends SystemService
             // This method is only needed to support legacy display blanking behavior
             // where the display's power state is coupled to suspend or to the power HAL.
             // The order of operations matters here.
+            Slog.i(TAG, "[onDisplayStateChange] allInactive=" + allInactive + ",allOff=" + allOff + ",mForceSuspend=" + mForceSuspendSettingsOn);
             synchronized (mLock) {
                 setPowerModeInternal(MODE_DISPLAY_INACTIVE, allInactive);
                 if (allOff) {
@@ -3923,12 +3945,74 @@ public final class PowerManagerService extends SystemService
                     if (!mDecoupleHalAutoSuspendModeFromDisplayConfig) {
                         setHalAutoSuspendModeLocked(true);
                     }
+
+                    if (mForceSuspendSettingsOn && !mIsPowered) {
+                        Settings.Global.putInt(mContext.getContentResolver(),
+                                Settings.Global.RESTRICTED_NETWORKING_MODE, 1);
+                        updateWakeLockDisabledStatesLocked();
+
+                        final int numWakeLocks = mWakeLocks.size();
+                        Slog.i(TAG, "Screen Off. mWakeLocks.size()=" + numWakeLocks);
+                        for (int i = 0; i <numWakeLocks; i++) {
+                            final WakeLock wakeLock = mWakeLocks.get(i);
+                            if ((wakeLock.mFlags & PowerManager.WAKE_LOCK_LEVEL_MASK) == PowerManager.PARTIAL_WAKE_LOCK || isScreenLock(wakeLock)) {
+                                if (wakeLock.mCallback == null || !wakeLock.mDisabled) {
+                                    continue;
+                                }
+
+                                try {
+                                    wakeLock.mCallback.onSuspendResume(false);
+                                } catch (RemoteException e) {
+                                    e.printStackTrace();
+                                }
+
+                                mWakeLocksToResume.add(wakeLock);
+                            }
+                        }
+
+                        mPowerStateCallbacks.broadcast(callback -> {
+                            try {
+                                callback.onSuspend();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                        setHalAutoSuspendModeLocked(true);
+                    }
                 } else {
                     if (!mDecoupleHalAutoSuspendModeFromDisplayConfig) {
                         setHalAutoSuspendModeLocked(false);
                     }
                     if (!mDecoupleHalInteractiveModeFromDisplayConfig) {
                         setHalInteractiveModeLocked(true);
+                    }
+
+                    if (mForceSuspendSettingsOn) {
+                        Settings.Global.putInt(mContext.getContentResolver(), Settings.Global.RESTRICTED_NETWORKING_MODE, 0);
+                        updateWakeLockDisabledStatesLocked();
+                        final int numWakeLocks = mWakeLocksToResume.size();
+                        Slog.i(TAG, ">>>>>>>> Screen On. mWakeLocksToResume.size()=" + numWakeLocks);
+                        for (int i = 0; i < numWakeLocks; i++) {
+                            final WakeLock wakeLock = mWakeLocksToResume.get(i);
+                            Slog.i(TAG, wakeLock.toString());
+                            try {
+                                wakeLock.mCallback.onSuspendResume(true);
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        Slog.i(TAG, "<<<<<<<<");
+
+                        mPowerStateCallbacks.broadcast(callback -> {
+                            try {
+                                callback.onResume();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                        mWakeLocksToResume.clear();
                     }
                 }
             }
@@ -4062,7 +4146,8 @@ public final class PowerManagerService extends SystemService
     private void setHalAutoSuspendModeLocked(boolean enable) {
         if (enable != mHalAutoSuspendModeEnabled) {
             if (DEBUG) {
-                Slog.d(TAG, "Setting HAL auto-suspend mode to " + enable);
+                Slog.i(TAG, "Setting HAL auto-suspend mode to " + enable);
+                Slog.i(TAG, Log.getStackTraceString(new Throwable()));
             }
             mHalAutoSuspendModeEnabled = enable;
             Trace.traceBegin(Trace.TRACE_TAG_POWER, "setHalAutoSuspend(" + enable + ")");
@@ -4448,7 +4533,7 @@ public final class PowerManagerService extends SystemService
                 == PowerManager.PARTIAL_WAKE_LOCK) {
             boolean disabled = false;
             final int appid = UserHandle.getAppId(wakeLock.mOwnerUid);
-            if (appid >= Process.FIRST_APPLICATION_UID) {
+            if (appid >= Process.FIRST_APPLICATION_UID || mForceSuspendSettingsOn) {
                 // Cached inactive processes are never allowed to hold wake locks.
                 if (mConstants.NO_CACHED_WAKE_LOCKS) {
                     disabled = mForceSuspendActive
@@ -7137,6 +7222,16 @@ public final class PowerManagerService extends SystemService
             } finally {
                 Binder.restoreCallingIdentity(ident);
             }
+        }
+
+        @Override // Binder call
+        public void registerPowerStateCallback(IPowerStateCallback cb) {
+            mPowerStateCallbacks.register(cb);
+        }
+
+        @Override // Binder call
+        public void unregisterPowerStateCallback(IPowerStateCallback cb) {
+            mPowerStateCallbacks.unregister(cb);
         }
     }
 

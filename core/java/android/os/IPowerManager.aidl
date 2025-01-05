@@ -22,6 +22,7 @@ import android.os.ParcelDuration;
 import android.os.PowerSaveState;
 import android.os.WorkSource;
 import android.os.IWakeLockCallback;
+import android.os.IPowerStateCallback;
 
 /** @hide */
 
@@ -174,4 +175,6 @@ interface IPowerManager
     void rebootCustom(boolean confirm, String reason, boolean wait);
     void setKeyboardVisibility(boolean visible);
     void wakeUpWithProximityCheck(long time, int reason, String details, String opPackageName);
+    void registerPowerStateCallback(IPowerStateCallback cb);
+    void unregisterPowerStateCallback(IPowerStateCallback cb);
 }
