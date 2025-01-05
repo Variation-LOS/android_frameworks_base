@@ -21,4 +21,5 @@ package android.os;
  */
 oneway interface IWakeLockCallback {
     oneway void onStateChanged(boolean enabled);
+    oneway void onSuspendResume(boolean isResume);
 }

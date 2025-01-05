@@ -4915,6 +4915,11 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
     }
 
     private boolean hasRestrictedModeAccess(int uid) {
+        // use powersave whitelist for restrictedmode
+        if (mPowerSaveWhitelistAppIds.get(uid)) {
+            return true;
+        }
+
         try {
             // TODO: this needs to be kept in sync with
             // PermissionMonitor#hasRestrictedNetworkPermission
