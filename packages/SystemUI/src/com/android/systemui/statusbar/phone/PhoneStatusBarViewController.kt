@@ -214,6 +214,8 @@ private constructor(
         }
     }
 
+    fun getView() = mView
+
     private fun addDarkReceivers() {
         darkIconDispatcher.addDarkReceiver(battery)
         clockController.addDarkReceiver()
