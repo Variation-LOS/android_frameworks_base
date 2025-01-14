@@ -22,6 +22,30 @@
       },
       "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eafbf1ed_3e302b19",
+        "filename": "packages/SystemUI/src/com/android/systemui/haptics/qs/QSLongPressEffect.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-01-14T10:21:26Z",
+      "side": 1,
+      "message": "It is called in handleAnimationComplete",
+      "parentUuid": "e345130f_e541aa01",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 5
+      },
+      "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
