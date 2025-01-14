@@ -165,6 +165,30 @@
       },
       "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ffefc4e_864fa7f9",
+        "filename": "core/java/com/android/internal/os/RuntimeInit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-14T21:11:18Z",
+      "side": 1,
+      "message": "I don\u0027t see anything off with the code by itself so it probably really is a race condition in the order of which android loads the classpath.\nTry https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/415529 it ensures the class is part of the dexpreopt-ed art image and _may_ solve the issue since already compiled",
+      "parentUuid": "35947ea9_f4cb6c59",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
