@@ -88,6 +88,24 @@
       "parentUuid": "5db41165_45e759fb",
       "revId": "1bddc0f03dd0c759bc01717e37789fa93dad7f54",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fca39378_0caaad45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20587
+      },
+      "writtenOn": "2025-01-14T09:24:20Z",
+      "side": 1,
+      "message": "This change for all other branches have the same topic so I don\u0027t think it makes sense to use another topic for this CR.",
+      "parentUuid": "2ffabfaf_620cbf02",
+      "revId": "1bddc0f03dd0c759bc01717e37789fa93dad7f54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
