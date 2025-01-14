@@ -189,6 +189,30 @@
       },
       "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e56d2ef8_92aa3c58",
+        "filename": "core/java/com/android/internal/os/RuntimeInit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-01-14T21:14:26Z",
+      "side": 1,
+      "message": "I am going to see if constantly rebooting the device will eventually trigger the crash again, if I can conclude that this error is sorta reporoducable, I will certainly give this a try and see what happens. :D",
+      "parentUuid": "1ffefc4e_864fa7f9",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
