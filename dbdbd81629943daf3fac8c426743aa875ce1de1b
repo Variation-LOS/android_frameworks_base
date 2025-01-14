@@ -46,6 +46,30 @@
       },
       "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e9d8965_6f247a76",
+        "filename": "packages/SystemUI/src/com/android/systemui/haptics/qs/QSLongPressEffect.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-01-14T10:22:55Z",
+      "side": 1,
+      "message": "Tested on caiman (primitives) and FP5 (no primitives)",
+      "parentUuid": "eafbf1ed_3e302b19",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 5
+      },
+      "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
