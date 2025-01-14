@@ -70,6 +70,30 @@
       },
       "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fd84582_e587b1e8",
+        "filename": "packages/SystemUI/src/com/android/systemui/haptics/qs/QSLongPressEffect.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-14T10:23:08Z",
+      "side": 1,
+      "message": "meh, I guess chrome didn\u0027t update search results when I opened the whole file...",
+      "parentUuid": "eafbf1ed_3e302b19",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 5
+      },
+      "revId": "dbdbd81629943daf3fac8c426743aa875ce1de1b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
