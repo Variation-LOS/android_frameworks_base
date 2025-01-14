@@ -93,6 +93,30 @@
       },
       "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "300392f3_ee97ccf2",
+        "filename": "core/java/com/android/internal/os/RuntimeInit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-01-14T20:54:41Z",
+      "side": 1,
+      "message": "I am not too sure, but it MIGHT be related to Aperture, I think it only started happening after this commit, although I am not confident in that:\n\nhttps://github.com/LineageOS/android_device_samsung_a21s-common/commit/622aa178dbb604d7b6dfaebef195bccb56ab7880",
+      "parentUuid": "75e1aa98_b4b227ae",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
