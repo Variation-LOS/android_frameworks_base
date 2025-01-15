@@ -272,6 +272,30 @@
       },
       "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42b40eb1_ea9f5f0f",
+        "filename": "core/java/com/android/internal/os/RuntimeInit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-01-15T17:15:32Z",
+      "side": 1,
+      "message": "I restarted my device at least 20 times, and I gave up as I couldn\u0027t reproduce the bug, so it\u0027s not like I can even test out the other patch you made :(",
+      "parentUuid": "2da6595d_daeeccf2",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
