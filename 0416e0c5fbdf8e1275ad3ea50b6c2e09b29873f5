@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9284259_ce415410",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2025-01-15T04:24:08Z",
+      "side": 1,
+      "message": "Hi, just want to add -- if you look other parts of the code ActivityManager.getService() is always guarded for null check except for this place. This is likely miss from AOSP.",
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bf9187d_a0f06481",
