@@ -16,6 +16,24 @@
       "message": "Doesn\u0027t long click set this to infinite?",
       "revId": "0737ddfbe1d2601148258992c1585d2dc1c0badc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62e7f876_6be90fe2",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/CaffeineTile.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-01-15T20:51:05Z",
+      "side": 1,
+      "message": "This is about the animation effect on long click. Before this change, long press was broken for tiles that don\u0027t launch an activity, this change fixes that.",
+      "parentUuid": "8f1b8e6c_38a261fa",
+      "revId": "0737ddfbe1d2601148258992c1585d2dc1c0badc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
