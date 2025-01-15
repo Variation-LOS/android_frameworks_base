@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17c42660_0d0365e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-15T09:10:58Z",
+      "side": 1,
+      "message": "But won\u0027t fix anything by itself, maybe better loggin, upload it to aosp then",
+      "parentUuid": "d9284259_ce415410",
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bf9187d_a0f06481",
