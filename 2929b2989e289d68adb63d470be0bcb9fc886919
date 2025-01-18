@@ -16,6 +16,23 @@
       "message": "This is a crude fix to https://gitlab.com/LineageOS/issues/android/-/issues/8002 .\n\nBurn-in translations are now handled by either AodBurnInLayer (small clock, smartspace, etc.) or the root view itself (large clock, etc.), but Google seems to have forgot to add regular keyguard slices to either, so these slices become immobile, a regression from U.\n\nInstead of finding somewhere proper in the code to add slices to AodBurnInLayer, I simply let root view handle it.",
       "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f56d282_f3cccca8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20162
+      },
+      "writtenOn": "2025-01-18T12:16:17Z",
+      "side": 1,
+      "message": "This has not been extensively verified, as I haven\u0027t switched to daily-driving LOS22 yet.\n\nBefore: https://imgur.com/gi3mgAT\nAfter: https://imgur.com/MEMClim",
+      "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
