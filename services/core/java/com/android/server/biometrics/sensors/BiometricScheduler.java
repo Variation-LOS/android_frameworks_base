@@ -69,6 +69,9 @@ import java.util.function.Supplier;
 public class BiometricScheduler<T, U> {
 
     private static final String TAG = "BiometricScheduler";
+
+    private boolean mCancel;
+
     // Number of recent operations to keep in our logs for dumpsys
     protected static final int LOG_NUM_RECENT_OPERATIONS = 50;
 
@@ -276,12 +279,15 @@ public class BiometricScheduler<T, U> {
      * @param gestureAvailabilityDispatcher may be null if the sensor does not support gestures
      *                                      (such as fingerprint swipe).
      */
-    public BiometricScheduler(@SensorType int sensorType,
+    public BiometricScheduler(Context context, @SensorType int sensorType,
             @Nullable GestureAvailabilityDispatcher gestureAvailabilityDispatcher) {
         this(new Handler(Looper.getMainLooper()), sensorType, gestureAvailabilityDispatcher,
                 IBiometricService.Stub.asInterface(
                         ServiceManager.getService(Context.BIOMETRIC_SERVICE)),
                 LOG_NUM_RECENT_OPERATIONS);
+
+        mCancel = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_fpCancelIfNotIdle);
     }
 
     /**
@@ -309,6 +315,10 @@ public class BiometricScheduler<T, U> {
         }
         if (mPendingOperations.isEmpty()) {
             Slog.d(TAG, "No operations, returning to idle");
+            return;
+        }
+        if (mCurrentUserRetriever == null) {
+            startNextOperationIfIdle();
             return;
         }
 
@@ -349,8 +359,13 @@ public class BiometricScheduler<T, U> {
 
     protected void startNextOperationIfIdle() {
         if (mCurrentOperation != null) {
-            Slog.v(TAG, "Not idle, current operation: " + mCurrentOperation);
-            return;
+            if (mCancel && !mCurrentOperation.isFinished()) {
+                Slog.v(TAG, "Not idle, cancelling current operation: " + mCurrentOperation);
+                mCurrentOperation.cancel(mHandler, mInternalCallback);
+            } else {
+                Slog.v(TAG, "Not idle, current operation: " + mCurrentOperation);
+                return;
+            }
         }
         if (mPendingOperations.isEmpty()) {
             Slog.d(TAG, "No operations, returning to idle");
@@ -677,10 +692,11 @@ public class BiometricScheduler<T, U> {
      * Start the timeout for the watchdog.
      */
     public void startWatchdog() {
-        if (mCurrentOperation == null) {
+        final BiometricSchedulerOperation operation = mCurrentOperation;
+        if (operation == null) {
+            Slog.e(TAG, "Current operation is null,no need to start watchdog");
             return;
         }
-        final BiometricSchedulerOperation operation = mCurrentOperation;
         mHandler.postDelayed(() -> {
             if (operation == mCurrentOperation && !operation.isFinished()) {
                 Counter.logIncrement("biometric.value_scheduler_watchdog_triggered_count");
