@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a0ed8d7_9deb08f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-01-22T22:35:47Z",
+      "side": 1,
+      "message": "works well on rtwo and tundra and will probably work for a lot more Motorola devices especially",
+      "revId": "6e6fd53e18945aba9a276734c7916f461021e952",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
