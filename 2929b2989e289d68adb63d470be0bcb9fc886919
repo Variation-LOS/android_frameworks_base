@@ -33,6 +33,23 @@
       "message": "This has not been extensively verified, as I haven\u0027t switched to daily-driving LOS22 yet.\n\nBefore: https://imgur.com/gi3mgAT\nAfter: https://imgur.com/MEMClim",
       "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d50df166_7b986e6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-01-23T20:19:55Z",
+      "side": 1,
+      "message": "Seems to work fine on 22.1",
+      "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
