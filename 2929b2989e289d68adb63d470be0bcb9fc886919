@@ -50,6 +50,23 @@
       "message": "Seems to work fine on 22.1",
       "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea421369_870a4eba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-02T19:17:30Z",
+      "side": 1,
+      "message": "seems to work on tangor",
+      "revId": "2929b2989e289d68adb63d470be0bcb9fc886919",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
