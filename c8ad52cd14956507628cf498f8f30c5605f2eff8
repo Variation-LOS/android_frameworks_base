@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb32f351_9cbd43cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-04T13:50:41Z",
+      "side": 1,
+      "message": "This was kept duplicated on purpose in case other ROMs pick either network traffic or the VPN tile separately",
+      "revId": "c8ad52cd14956507628cf498f8f30c5605f2eff8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
