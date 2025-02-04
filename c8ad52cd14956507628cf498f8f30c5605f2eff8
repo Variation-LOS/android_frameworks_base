@@ -16,6 +16,24 @@
       "message": "This was kept duplicated on purpose in case other ROMs pick either network traffic or the VPN tile separately",
       "revId": "c8ad52cd14956507628cf498f8f30c5605f2eff8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75cf0709_016b2960",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2025-02-04T13:58:34Z",
+      "side": 1,
+      "message": "in that case, wouldn\u0027t it be better to remove the other one?",
+      "parentUuid": "eb32f351_9cbd43cd",
+      "revId": "c8ad52cd14956507628cf498f8f30c5605f2eff8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
