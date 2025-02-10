@@ -666,6 +666,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Click volume down + power for partial screenshot
     boolean mClickPartialScreenshot;
 
+    // Volume Up and Down to mute on Android TV
+    boolean mVolUpAndDownMute;
+
     private boolean mPendingKeyguardOccluded;
     private boolean mKeyguardOccludedChanged;
 
@@ -1115,6 +1118,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(LineageSettings.System.getUriFor(
                     LineageSettings.System.VOLUME_ANSWER_CALL), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(LineageSettings.System.getUriFor(
+                    LineageSettings.System.VOLUME_UP_AND_DOWN_MUTE), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2822,16 +2828,21 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 new TwoKeysCombinationRule(KEYCODE_VOLUME_DOWN, KEYCODE_VOLUME_UP) {
                     @Override
                     boolean preCondition() {
-                        return mAccessibilityShortcutController
+                        return (mHasFeatureLeanback && mVolUpAndDownMute) ||
+                                mAccessibilityShortcutController
                                 .isAccessibilityShortcutAvailable(isKeyguardLocked());
                     }
                     @Override
                     void execute() {
-                        interceptAccessibilityShortcutChord();
+                        if (mHasFeatureLeanback && mVolUpAndDownMute)
+                            triggerVirtualKeypress(KeyEvent.KEYCODE_VOLUME_MUTE);
+                        else
+                            interceptAccessibilityShortcutChord();
                     }
                     @Override
                     void cancel() {
-                        cancelPendingAccessibilityShortcutAction();
+                        if (!mHasFeatureLeanback)
+                            cancelPendingAccessibilityShortcutAction();
                     }
                 });
 
@@ -3390,6 +3401,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                             UserHandle.USER_CURRENT) == 1;
             mCameraLaunch = LineageSettings.System.getIntForUser(resolver,
                     LineageSettings.System.CAMERA_LAUNCH, 0,
+                    UserHandle.USER_CURRENT) == 1;
+            mVolUpAndDownMute = LineageSettings.System.getIntForUser(resolver,
+                    LineageSettings.System.VOLUME_UP_AND_DOWN_MUTE, 0,
                     UserHandle.USER_CURRENT) == 1;
 
             // Configure wake gesture.
