@@ -189,6 +189,24 @@
       "parentUuid": "1f791e59_e929f106",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa424752_d7ac4061",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-11T16:54:01Z",
+      "side": 1,
+      "message": "I expect the delete/rename to always work, if that\u0027s the case no failure is expected and you should throw yes.",
+      "parentUuid": "9978b2e7_207622cf",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
