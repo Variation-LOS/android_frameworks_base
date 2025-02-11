@@ -16,6 +16,24 @@
       "message": "Wouldn\u0027t it be nicer to rename/move the legacy file to the new path? That would allow eventually dropping this patch. This way it has to be carried around until the end of time",
       "revId": "6e901a73665238fd9b3f0d78f7d21223855869a4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0efcd7a_b1442cbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31578
+      },
+      "writtenOn": "2025-02-11T11:45:11Z",
+      "side": 1,
+      "message": "I agree moving the legacy file should be nicer. Will update accordingly",
+      "parentUuid": "37765e5a_7dc7d651",
+      "revId": "6e901a73665238fd9b3f0d78f7d21223855869a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
