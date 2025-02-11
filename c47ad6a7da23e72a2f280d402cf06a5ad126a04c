@@ -94,6 +94,30 @@
       },
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07d1974a_47c79da7",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-11T13:08:10Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4200d78d_9aff2d81",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 62
+      },
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
