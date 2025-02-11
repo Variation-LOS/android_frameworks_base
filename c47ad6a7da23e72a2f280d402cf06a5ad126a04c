@@ -279,6 +279,24 @@
       "parentUuid": "1c560212_5a841e41",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3605f424_95c93e18",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 24262
+      },
+      "writtenOn": "2025-02-11T18:01:43Z",
+      "side": 1,
+      "message": "I basically think the reverse, if the failures are so rare (but may still happen if unlucky) and we have this really simple fallback (it\u0027s just one line after all) covering all imaginable failure cases without disadvantage, shouldn\u0027t we just keep it in as per \"rather safe than sorry\"? If it was more complex, then I\u0027d totally agree with just ripping it out and not doing anything about the error, but here, don\u0027t see the problem with it.\nBut in the end, it probably barely matters in practice.",
+      "parentUuid": "cf91d1d6_67ccddde",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
