@@ -135,6 +135,24 @@
       "message": "why this fallback?\nI know it\u0027s probably safe but I think failing the migration (aka rename) shouldn\u0027t do that?",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d203cef7_d773dbd0",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 31578
+      },
+      "writtenOn": "2025-02-11T16:33:55Z",
+      "side": 1,
+      "message": "because reading the old file still works, and makes the fp work. Do you have any other suggestions?",
+      "parentUuid": "e9475737_fba82986",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
