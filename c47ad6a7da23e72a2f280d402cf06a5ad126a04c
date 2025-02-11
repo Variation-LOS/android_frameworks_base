@@ -207,6 +207,24 @@
       "parentUuid": "9978b2e7_207622cf",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea7f0c65_a6e663a0",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-11T17:32:40Z",
+      "side": 1,
+      "message": "Keep in mind that if you fail hard, there\u0027s a chance that you will lose existing fingerprints, which we don\u0027t want",
+      "parentUuid": "aa424752_d7ac4061",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
