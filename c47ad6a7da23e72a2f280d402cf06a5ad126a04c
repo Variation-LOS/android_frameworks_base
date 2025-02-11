@@ -22,6 +22,30 @@
       },
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35b6ebb3_0a06d85e",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 31578
+      },
+      "writtenOn": "2025-02-11T12:55:21Z",
+      "side": 1,
+      "message": "doesn\u0027t HIDL use the legacy file name \"settings_fingerprint.xml\"?",
+      "parentUuid": "d8e99efc_048d7ff4",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 62
+      },
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
