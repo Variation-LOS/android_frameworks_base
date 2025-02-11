@@ -153,6 +153,24 @@
       "parentUuid": "e9475737_fba82986",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f791e59_e929f106",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-11T16:39:21Z",
+      "side": 1,
+      "message": "You\u0027re trying to migrate the file by renaming it, but also do no migration at all and use the old file in case that fails (can it?)\nI\u0027d expect the code to only do one of those, rename OR use old file.\n\nI\u0027d be more aggressive and make rename/deletion hard failures so that we know the migration didn\u0027t work.",
+      "parentUuid": "d203cef7_d773dbd0",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
