@@ -31,12 +31,14 @@ import android.annotation.Nullable;
 import android.content.Context;
 import android.hardware.biometrics.fingerprint.V2_1.FingerprintError;
 import android.hardware.fingerprint.Fingerprint;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.SparseArray;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.server.biometrics.sensors.BiometricUtils;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -51,7 +53,7 @@ public class FingerprintUtils implements BiometricUtils<Fingerprint> {
 
     @GuardedBy("this")
     private final SparseArray<FingerprintUserState> mUserStates;
-    private final String mFileName;
+    private String mFileName;
 
     /**
      * Retrieves an instance for the specified sensorId.
@@ -160,6 +162,15 @@ public class FingerprintUtils implements BiometricUtils<Fingerprint> {
         synchronized (this) {
             FingerprintUserState state = mUserStates.get(userId);
             if (state == null) {
+                if (mFileName.equals("settings_fingerprint_0.xml")) {
+                    // Check if this file is empty or does not exist
+                    File legacyFile = new File(Environment.getUserSystemDirectory(userId),
+                            LEGACY_FINGERPRINT_FILE);
+                    File file = new File(Environment.getUserSystemDirectory(userId), mFileName);
+                    if (legacyFile.length() > 0 && file.length() == 0) {
+                        mFileName = LEGACY_FINGERPRINT_FILE;
+                    }
+                }
                 state = new FingerprintUserState(ctx, userId, mFileName);
                 mUserStates.put(userId, state);
             }
