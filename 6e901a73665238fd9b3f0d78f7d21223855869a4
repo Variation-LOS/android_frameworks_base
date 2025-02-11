@@ -34,6 +34,24 @@
       "parentUuid": "37765e5a_7dc7d651",
       "revId": "6e901a73665238fd9b3f0d78f7d21223855869a4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8033ed35_144319b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-11T12:34:25Z",
+      "side": 1,
+      "message": "Just make sure that moving the file won\u0027t break legacy HIDL",
+      "parentUuid": "c0efcd7a_b1442cbe",
+      "revId": "6e901a73665238fd9b3f0d78f7d21223855869a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
