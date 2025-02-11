@@ -243,6 +243,24 @@
       "parentUuid": "ea7f0c65_a6e663a0",
       "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c560212_5a841e41",
+        "filename": "services/core/java/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 24262
+      },
+      "writtenOn": "2025-02-11T17:48:37Z",
+      "side": 1,
+      "message": "How exactly can you ensure it always works? Or why would it fail that would need to be catched and lead to explosion (bootloop - the only option other than giving up)? If it\u0027s something like \"no storage space\", it\u0027s a reasonable assumption that the user will free up some storage and reboot once before installing a new major version (without the patch); if it\u0027s something a la corrupted storage medium / fs I think fingerprints are the smaller problem. The only reason I see to explode is to catch selinux mistakes or something along the lines, but those would also be caught when maintainers are manually testing the patch. Just skipping seems like the better solution to me.",
+      "parentUuid": "eb02c69f_f7156c37",
+      "revId": "c47ad6a7da23e72a2f280d402cf06a5ad126a04c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
