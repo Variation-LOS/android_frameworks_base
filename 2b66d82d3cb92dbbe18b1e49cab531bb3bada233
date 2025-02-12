@@ -16,6 +16,24 @@
       "message": "Hello, any chance of resurrecting work on this change please? :)",
       "revId": "2b66d82d3cb92dbbe18b1e49cab531bb3bada233",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0e40b5c_72162149",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-02-12T10:02:09Z",
+      "side": 1,
+      "message": "yes, you\u0027re free to do that.",
+      "parentUuid": "9a1a9dcd_49ea9011",
+      "revId": "2b66d82d3cb92dbbe18b1e49cab531bb3bada233",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
