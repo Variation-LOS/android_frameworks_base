@@ -19,6 +19,7 @@ package com.android.server.permission.access.util
 import android.os.FileUtils
 import android.util.AtomicFile
 import android.util.Slog
+import com.android.server.pm.PackageManagerServiceUtils
 import com.android.server.security.FileIntegrity;
 import java.io.File
 import java.io.FileInputStream
@@ -61,11 +62,13 @@ inline fun AtomicFile.writeWithReserveCopy(block: (FileOutputStream) -> Unit) {
     } catch (e: Exception) {
         Slog.e("AccessPersistence", "Failed to write $reserveFile", e)
     }
-    try {
-        FileIntegrity.setUpFsVerity(baseFile)
-        FileIntegrity.setUpFsVerity(reserveFile)
-    } catch (e: Exception) {
-        Slog.e("AccessPersistence", "Failed to verity-protect runtime-permissions", e)
+    if (PackageManagerServiceUtils.isApkVerityEnabled()) {
+        try {
+            FileIntegrity.setUpFsVerity(baseFile)
+            FileIntegrity.setUpFsVerity(reserveFile)
+        } catch (e: Exception) {
+            Slog.e("AccessPersistence", "Failed to verity-protect runtime-permissions", e)
+        }
     }
 }
 
