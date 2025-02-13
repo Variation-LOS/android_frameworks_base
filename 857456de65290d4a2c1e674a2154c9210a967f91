@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2c3bd2c_36dbdf32",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2827,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-13T23:30:30Z",
+      "side": 1,
+      "message": "drop this check here.",
+      "range": {
+        "startLine": 2827,
+        "startChar": 8,
+        "endLine": 2827,
+        "endChar": 34
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ab8012e_d6b30da8",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2832,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-13T23:30:30Z",
+      "side": 1,
+      "message": "```suggestion\n                            return mHasFeatureLeanback ? mVolUpAndDownMute : mAccessibilityShortcutController\n                                .isAccessibilityShortcutAvailable(isKeyguardLocked());\n```",
+      "range": {
+        "startLine": 2832,
+        "startChar": 28,
+        "endLine": 2832,
+        "endChar": 53
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42fad7f8_db2a65ce",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2836,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-13T23:30:30Z",
+      "side": 1,
+      "message": "same logic here.",
+      "range": {
+        "startLine": 2836,
+        "startChar": 28,
+        "endLine": 2836,
+        "endChar": 81
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aac6123c_2bb2c205",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2840,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-13T23:30:30Z",
+      "side": 1,
+      "message": "and here.",
+      "range": {
+        "startLine": 2839,
+        "startChar": 38,
+        "endLine": 2840,
+        "endChar": 25
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c670b97_71c96394",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2859,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-13T23:30:30Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 2842,
+        "startChar": 10,
+        "endLine": 2859,
+        "endChar": 9
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
