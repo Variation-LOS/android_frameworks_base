@@ -25,6 +25,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.content.res.Resources.NotFoundException
+import android.database.sqlite.SQLiteException
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.graphics.ImageDecoder.DecodeException
@@ -175,6 +176,9 @@ constructor(
                 return null
             } catch (e: DecodeException) {
                 Log.w(TAG, "Failed to decode source $source", e)
+                return null
+            } catch (e: SQLiteException) {
+                Log.w(TAG, "Failed to query source $source", e)
                 return null
             }
         }
