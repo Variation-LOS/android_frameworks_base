@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17aa92aa_2183adc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T18:22:54Z",
+      "side": 1,
+      "message": "Google\u0027s fix is equivalent (they catch Exception) but I don\u0027t know in which cases they added it (or rather, don\u0027t want to taint me), so this seemed just a better solution.",
+      "revId": "8aff2d02713ac3f433b3dadfcd182c0a19b43404",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
