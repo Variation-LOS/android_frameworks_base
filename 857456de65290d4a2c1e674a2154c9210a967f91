@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "651b0883_415c6652",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2832,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2025-02-14T03:08:44Z",
+      "side": 1,
+      "message": "I tried something similar to this (a full if/else) and stuff was going screwy. It was like precondition was always true, then the executation part was always running and doing weird things. It wasn\u0027t until I split the entire thing that it started working as intended. Maybe you can make it work, but I wasn\u0027t able to.",
+      "parentUuid": "7ab8012e_d6b30da8",
+      "range": {
+        "startLine": 2832,
+        "startChar": 28,
+        "endLine": 2832,
+        "endChar": 53
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "42fad7f8_db2a65ce",
         "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
         "patchSetId": 3
