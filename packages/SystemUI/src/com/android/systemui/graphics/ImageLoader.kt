@@ -176,6 +176,9 @@ constructor(
             } catch (e: DecodeException) {
                 Log.w(TAG, "Failed to decode source $source", e)
                 return null
+            } catch (e: SQLiteException) {
+                Log.w(TAG, "Failed to query source $source", e)
+                return null
             }
         }
 
