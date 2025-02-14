@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b965846a_adc25501",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2827,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-14T18:06:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2c3bd2c_36dbdf32",
+      "range": {
+        "startLine": 2827,
+        "startChar": 8,
+        "endLine": 2827,
+        "endChar": 34
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ab8012e_d6b30da8",
@@ -71,6 +95,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e36f22af_5854eb02",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2832,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-14T18:06:07Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "651b0883_415c6652",
+      "range": {
+        "startLine": 2832,
+        "startChar": 28,
+        "endLine": 2832,
+        "endChar": 53
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42fad7f8_db2a65ce",
@@ -84,6 +132,30 @@
       "writtenOn": "2025-02-13T23:30:30Z",
       "side": 1,
       "message": "same logic here.",
+      "range": {
+        "startLine": 2836,
+        "startChar": 28,
+        "endLine": 2836,
+        "endChar": 81
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e6ac849_97d916d8",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2836,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-14T18:06:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42fad7f8_db2a65ce",
       "range": {
         "startLine": 2836,
         "startChar": 28,
@@ -117,6 +189,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96697527_9e69fe7c",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2840,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-14T18:06:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aac6123c_2bb2c205",
+      "range": {
+        "startLine": 2839,
+        "startChar": 38,
+        "endLine": 2840,
+        "endChar": 25
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c670b97_71c96394",
@@ -130,6 +226,30 @@
       "writtenOn": "2025-02-13T23:30:30Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 2842,
+        "startChar": 10,
+        "endLine": 2859,
+        "endChar": 9
+      },
+      "revId": "857456de65290d4a2c1e674a2154c9210a967f91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4f6a1f2_3c85943f",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2859,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-14T18:06:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c670b97_71c96394",
       "range": {
         "startLine": 2842,
         "startChar": 10,
