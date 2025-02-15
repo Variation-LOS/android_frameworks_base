@@ -16,6 +16,40 @@
       "message": "sent to AOSP - use | AOSP link above next to change-id to track - but that\u0027s gonna take _ages_.",
       "revId": "89ba69d7178dd8b70d87de23325bbc74c9a66244",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c86d78b_c65594f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-15T18:08:43Z",
+      "side": 1,
+      "message": "just because I don\u0027t think it\u0027s necessary",
+      "revId": "89ba69d7178dd8b70d87de23325bbc74c9a66244",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e085c70_00a7f923",
+        "filename": "core/java/com/android/internal/pm/pkg/component/AconfigFlags.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-15T18:08:43Z",
+      "side": 1,
+      "message": "to avoid changing the code\nif !isFile || !can read and continue",
+      "revId": "89ba69d7178dd8b70d87de23325bbc74c9a66244",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
