@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3529fe8_ab19e358",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-15T00:37:31Z",
+      "side": 1,
+      "message": "Sent to AOSP?",
+      "revId": "6710b7b40b729ef526fb8c38b049504ea2700e9a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e81fb43_6b91ffa5",
+        "filename": "core/java/com/android/internal/pm/pkg/component/AconfigFlags.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-15T00:37:31Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "6710b7b40b729ef526fb8c38b049504ea2700e9a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78449f28_bedb7f41",
+        "filename": "core/java/com/android/internal/pm/pkg/component/AconfigFlags.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-15T00:37:31Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "6710b7b40b729ef526fb8c38b049504ea2700e9a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
