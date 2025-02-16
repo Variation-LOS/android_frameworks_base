@@ -1,0 +1,684 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b76974e6_ffd5b9c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "In addition to the comments, the file packages/SystemUI/src/com/android/systemui/statusbar/phone/CentralSurfaces is empty?\n\nAlso the commit message is unclear - what does this change introduce, where would one see such a progress bar, etc\nThe post linked might contain references but I only see various artworks which are of no use to me to understand the actual feature",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6819f162_3ec04bbc",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "order imports",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a8759ec_7c091132",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space after )",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26f639c7_468eb0d1",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44da511c_a1f5e41a",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space after if and before (",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd0c719f_53a3f69c",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space after if and before (",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb15d193_2d65361d",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ff252db_ca726fe3",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b272046e_730fc0e9",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01ede385_3140c3f3",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8e064c1_a86901ae",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5fcc820_069c4cbc",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2d600ff_e8aa7920",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1305bb10_f6aa1c73",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a3e7a8b_76cbd3bd",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50f27c1c_8731ce7d",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de1f4112_88ea0456",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5348fa2_1abb8e5f",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "extra spaces/tabs",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2521370b_0719dce1",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "extra spaces/tabs",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fc455a1_83f33292",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59d53f75_a53260e9",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "378b9319_f2c2e45e",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0774a785_e4298f79",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "866795f6_22620c39",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43e10a75_4c15bd20",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a269e358_4890b8fc",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0993a20_959b8d72",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b85efe5f_a5b44559",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between if and ( and ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "441f9a70_25d63124",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length, space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "553767f7_76c30cd5",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length, space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f87e4e3f_c2176866",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length, space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fd2aa1a_9ff1ad16",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "extra spaces/tabs",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "084eaa5f_896f3017",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space after closing ) and {, after that, watch line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83d088bc_7286680f",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between ) and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0af9e63_0b7ecca0",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "remove empty line here",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f66c5e7b_a05ede83",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/CentralSurfacesImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d656507b_89521790",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "space between View and {",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4bba561_aeb5d53e",
+        "filename": "packages/SystemUI/src/com/android/systemui/util/IconFetcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "remove extra spaces",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be48222b_4a20477a",
+        "filename": "packages/SystemUI/src/com/android/systemui/util/IconFetcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "typo package",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8498d8ba_0525f2ed",
+        "filename": "packages/SystemUI/src/com/android/systemui/util/IconFetcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:07:16Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
