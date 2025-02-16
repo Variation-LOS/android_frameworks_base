@@ -18,6 +18,23 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f921b6_bbe36ca2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T17:14:05Z",
+      "side": 1,
+      "message": "Generally speaking, please look up the android java code guidelines and fix the code.\nNote: AS can auto format it",
+      "revId": "37e52a7b8df77a17c56d24624d0cdf85e0f324e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6819f162_3ec04bbc",
