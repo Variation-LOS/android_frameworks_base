@@ -18,6 +18,23 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "427257ff_8bfae9a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2025-02-16T20:36:29Z",
+      "side": 1,
+      "message": "Interesting. I\u0027d also be interested to know more about where this is used though? Maybe some examples showing this actual implementation? 🙂\n\nIs it inspired by the top progress bar in this particular picture?\n\nhttps://www.reddit.com/media?url\u003dhttps%3A%2F%2Fpreview.redd.it%2Fnothing-os-3-0-images-fan-made-v0-kkop0wyyefbd1.png%3Fwidth%3D2880%26format%3Dpng%26auto%3Dwebp%26s%3D40db6a5d9b6aa4ef48a271af831178da1aeba4da",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f6a2e33_f6708eed",
