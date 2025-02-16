@@ -16,6 +16,74 @@
       "message": "\nI did fix some of the style problems, so that at least we can probably review it...",
       "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f6a2e33_f6708eed",
+        "filename": "packages/SystemUI/res/layout/status_bar.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T18:22:11Z",
+      "side": 1,
+      "message": "tabs instead of spaces...",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e55441e_f7fe969b",
+        "filename": "packages/SystemUI/res/layout/status_bar_ongoing_action_chip.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T18:22:11Z",
+      "side": 1,
+      "message": "mixing tabs and spaces? (+next two lines)",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68e49f13_eb4ff5f1",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/OnGoingActionProgressController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T18:22:11Z",
+      "side": 1,
+      "message": "has changeD",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cec8656d_40549372",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/CentralSurfacesImpl.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-16T18:22:11Z",
+      "side": 1,
+      "message": "unnecessary line addition",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
