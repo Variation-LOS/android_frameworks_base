@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac869ed2_e79bd5b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33243
+      },
+      "writtenOn": "2025-02-16T23:12:54Z",
+      "side": 1,
+      "message": "Generally speaking idea is to provide user with realtime updates on some process in background. Such a feature makes multitasking more convinient as while you are waiting some important action to complete you may do something else without interrupting yourself to open the notification area. My real use-case(also on the picture attached) is doing something while game downloads its\u0027 resources.\nhttps://imgur.com/a/knVzKCb",
+      "parentUuid": "427257ff_8bfae9a7",
+      "revId": "c8873c286427ece3b8ec024af16f5cabd23484f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f6a2e33_f6708eed",
