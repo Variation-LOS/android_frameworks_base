@@ -33,6 +33,23 @@
       "message": "Removing myself as I don\u0027t review Java/Frameworks much, but you\u0027ve got a good set of reviewers!",
       "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b6068b3_10a9bee4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33243
+      },
+      "writtenOn": "2025-02-17T14:51:55Z",
+      "side": 1,
+      "message": "Marked things which were fixed thanks to @someone5678.dev@gmail.com as resolved",
+      "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
