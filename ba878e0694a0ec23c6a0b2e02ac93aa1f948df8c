@@ -50,6 +50,40 @@
       "message": "Marked things which were fixed thanks to @someone5678.dev@gmail.com as resolved",
       "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da6bad9c_a9d8ac69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-02-17T14:56:59Z",
+      "side": 1,
+      "message": "Please also add license to new files",
+      "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "562b1016_35d57330",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-02-17T14:56:59Z",
+      "side": 1,
+      "message": "Can you create specific methods instead of directly interacting with the view?",
+      "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
