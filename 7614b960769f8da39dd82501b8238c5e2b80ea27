@@ -16,6 +16,24 @@
       "message": "If anything we want that",
       "revId": "7614b960769f8da39dd82501b8238c5e2b80ea27",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62fa0d47_ae3ecbbd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-02-17T17:48:31Z",
+      "side": 1,
+      "message": "Shall we submit this commit and drop this one: https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/415529\n\nI havn\u0027t experienced the issue since and maybe it got resolved by something else.\nBut it would be good to display the error in case it happens again.",
+      "parentUuid": "16717f0d_977fa029",
+      "revId": "7614b960769f8da39dd82501b8238c5e2b80ea27",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
