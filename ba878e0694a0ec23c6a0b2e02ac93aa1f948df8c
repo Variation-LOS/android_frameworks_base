@@ -16,6 +16,23 @@
       "message": "So, first:\n- Thanks! Love to see new names making fun controibutions.\n- Lot of todos from Michael W \u0026 others\n- You might want to look at AOSP code-style convention docs, might help next time\n\nSecond:\n- Others tend to leave their thoughts in our Discord and not comment on Gerrit, but as discussed internally, we\u0027re not sure we want to merge this even if all comments are fixed\n-- Any feature we integrate/merge we usually try to keep across QPR merges and new version jumps\n-- There\u0027s some concern that carrying this forward may not be all that fun (more merge conflicts, etc.)\n-- Especially with the fact that a completely redesigned QS/status-bar implementation is coming in one of the Android 16 QPR\u0027s (as seen in AOSP main)\n\nThird:\n- Once cleaned up, I\u0027d be curious what the AOSP team would think about this - sometimes they take these contributions. Though if you submit it there I might not call out that it was \"inspired\" by NothingOS lol.\n\nWith all that said - maybe a different decision comes out of it ultimately - just trying to convey the current thoughts so we\u0027re all on the same page.",
       "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21a0d16a_f79404cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-17T06:47:08Z",
+      "side": 1,
+      "message": "Removing myself as I don\u0027t review Java/Frameworks much, but you\u0027ve got a good set of reviewers!",
+      "revId": "ba878e0694a0ec23c6a0b2e02ac93aa1f948df8c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
