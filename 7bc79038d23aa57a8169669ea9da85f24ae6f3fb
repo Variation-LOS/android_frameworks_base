@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69e2ffc7_1ac5fe8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-17T20:53:08Z",
+      "side": 1,
+      "message": "another one bites the dust, will wait for aosp",
+      "revId": "7bc79038d23aa57a8169669ea9da85f24ae6f3fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
