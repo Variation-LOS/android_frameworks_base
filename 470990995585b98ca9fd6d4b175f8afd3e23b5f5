@@ -16,6 +16,41 @@
       "message": "merged on main",
       "revId": "470990995585b98ca9fd6d4b175f8afd3e23b5f5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53d36948_603c8040",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-18T17:45:23Z",
+      "side": 1,
+      "message": "A different change",
+      "revId": "470990995585b98ca9fd6d4b175f8afd3e23b5f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2710181d_678f75e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-18T17:45:23Z",
+      "side": 1,
+      "message": "Upstream was modified, so it doesn\u0027t match this change",
+      "parentUuid": "e1ed599c_4d9b4bfc",
+      "revId": "470990995585b98ca9fd6d4b175f8afd3e23b5f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
