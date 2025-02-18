@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cca5df2_689b4276",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt",
+        "patchSetId": 12
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-18T12:38:33Z",
+      "side": 1,
+      "message": "```suggestion\n            mView.findViewById(R.id.ongoing_action_app_icon) as ImageView,\n            mView.findViewById(R.id.app_action_progress) as ProgressBar,\n```\n\nYou added the imports, use them",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 87
+      },
+      "revId": "1b744d8f3a3d9f0e6ed2d2510da2a35a33f48d3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
