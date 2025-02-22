@@ -34,6 +34,24 @@
       "parentUuid": "7ba1ff6b_52c67fa2",
       "revId": "ccd61b1dc6349b073fb10a23949c2d0d34b198df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eff8227a_7edc600f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28328
+      },
+      "writtenOn": "2025-02-22T19:02:45Z",
+      "side": 1,
+      "message": "\u003e By configurable you mean dimensions, visibility or both?\nVisibility, like either a config or on/off toggle. Like an R.bool. usage",
+      "parentUuid": "0bc27717_934f72ff",
+      "revId": "ccd61b1dc6349b073fb10a23949c2d0d34b198df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
