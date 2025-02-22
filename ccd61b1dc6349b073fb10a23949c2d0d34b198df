@@ -16,6 +16,24 @@
       "message": "Any chance to make it configurable for notched devices? It eats up the space for remaining notification items.",
       "revId": "ccd61b1dc6349b073fb10a23949c2d0d34b198df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bc27717_934f72ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33243
+      },
+      "writtenOn": "2025-02-22T18:45:55Z",
+      "side": 1,
+      "message": "By configurable you mean dimensions, visibility or both?",
+      "parentUuid": "7ba1ff6b_52c67fa2",
+      "revId": "ccd61b1dc6349b073fb10a23949c2d0d34b198df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
