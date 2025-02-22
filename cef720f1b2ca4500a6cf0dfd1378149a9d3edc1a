@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "443bd2bb_80c45bc3",
+        "filename": "services/core/java/com/android/server/BatteryService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-22T15:57:53Z",
+      "side": 1,
+      "message": "this should be near to mLineageBatteryLights instantiation.",
+      "range": {
+        "startLine": 413,
+        "startChar": 12,
+        "endLine": 414,
+        "endChar": 29
+      },
+      "revId": "cef720f1b2ca4500a6cf0dfd1378149a9d3edc1a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
