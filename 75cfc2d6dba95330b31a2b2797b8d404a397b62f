@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d91026fb_b3234262",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-25T19:45:47Z",
+      "side": 1,
+      "message": "Not merged on AOSP, but merged on internal branches for release in next AOSP major version drop.",
+      "revId": "75cfc2d6dba95330b31a2b2797b8d404a397b62f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
