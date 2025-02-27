@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3cb881_8382fd57",
+        "filename": "packages/SettingsLib/DisplayUtils/src/com/android/settingslib/display/BrightnessUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-27T23:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f5cc48d_9b344a9b",
+      "revId": "7f7df162c6e47f73d8994b0ac526efc313ee1392",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5d9c94b8_54f9a21a",
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Yeah, it worked because min is 0 and max is 1 always",
       "parentUuid": "f2b10b14_ccf8a62d",
+      "revId": "7f7df162c6e47f73d8994b0ac526efc313ee1392",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c85c8023_ae17e424",
+        "filename": "packages/SettingsLib/DisplayUtils/src/com/android/settingslib/display/BrightnessUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-27T23:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a2594ab_fb5ce6a5",
       "revId": "7f7df162c6e47f73d8994b0ac526efc313ee1392",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

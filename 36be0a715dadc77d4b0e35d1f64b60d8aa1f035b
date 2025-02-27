@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0b6c194_cd979a84",
+        "filename": "packages/SettingsLib/DisplayUtils/src/com/android/settingslib/display/BrightnessUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-27T23:58:15Z",
+      "side": 1,
+      "message": "```suggestion\n    public static final boolean mDisableGammaConversion \u003d\n            SystemProperties.getBoolean(\"persist.sys.brightness.disable_gamma_conversion\", false);\n```",
+      "range": {
+        "startLine": 25,
+        "startChar": 58,
+        "endLine": 26,
+        "endChar": 90
+      },
+      "revId": "36be0a715dadc77d4b0e35d1f64b60d8aa1f035b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
