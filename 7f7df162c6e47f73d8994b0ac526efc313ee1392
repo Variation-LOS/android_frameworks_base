@@ -50,6 +50,24 @@
       "message": "Shouldn\u0027t you be using normalizedVal here too?",
       "revId": "7f7df162c6e47f73d8994b0ac526efc313ee1392",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a2594ab_fb5ce6a5",
+        "filename": "packages/SettingsLib/DisplayUtils/src/com/android/settingslib/display/BrightnessUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2025-02-27T23:16:55Z",
+      "side": 1,
+      "message": "Yeah, it worked because min is 0 and max is 1 always",
+      "parentUuid": "f2b10b14_ccf8a62d",
+      "revId": "7f7df162c6e47f73d8994b0ac526efc313ee1392",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
