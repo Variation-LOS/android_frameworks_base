@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83277864_b9baffd3",
+        "filename": "packages/SettingsLib/DisplayUtils/src/com/android/settingslib/display/BrightnessUtils.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-02-28T11:54:49Z",
+      "side": 1,
+      "message": "s is the prefix for static variables.",
+      "revId": "e1b9e7b00f676694b88f4c7fda5b76ff9cb6966c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
