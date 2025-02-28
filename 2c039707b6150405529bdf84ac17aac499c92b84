@@ -70,6 +70,24 @@
       "parentUuid": "a44552de_07a7bcb7",
       "revId": "2c039707b6150405529bdf84ac17aac499c92b84",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bb48f4e_fa53b9f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32548
+      },
+      "writtenOn": "2025-02-28T16:13:52Z",
+      "side": 1,
+      "message": "don\u0027t you think this duplicate app icon should be removed? \nhttps://photos.app.goo.gl/M96PpL2xHJp33jTq7\nAlso it doesn\u0027t override progress bar if we do other activity in same app or in some other app, the bar stays constant from first appearance until we dismiss notification",
+      "parentUuid": "3dc5e77b_097cd9e7",
+      "revId": "2c039707b6150405529bdf84ac17aac499c92b84",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
