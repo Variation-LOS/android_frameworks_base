@@ -16,6 +16,24 @@
       "message": "is the issue url I added correct?",
       "revId": "9ede2acded12f6e658a476b356ff418e5b3b8133",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71adb70c_094850bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34926
+      },
+      "writtenOn": "2025-03-03T00:11:49Z",
+      "side": 1,
+      "message": "Yes, Issue url is correct.",
+      "parentUuid": "74393ee3_cbdf84d7",
+      "revId": "9ede2acded12f6e658a476b356ff418e5b3b8133",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
