@@ -116,12 +116,13 @@ class WindowWakeUpPolicy {
      *      executed; {@code false} otherwise.
      */
     boolean wakeUpFromKey(int displayId, long eventTime, int keyCode, boolean isDown) {
-        return wakeUpFromKey(eventTime, keyCode, isDown, false);
+        return wakeUpFromKey(displayId, eventTime, keyCode, isDown, false);
     }
 
     /**
      * Wakes up from a key event.
      *
+     * @param displayId the id of the display to wake.
      * @param eventTime the timestamp of the event in {@link SystemClock#uptimeMillis()}.
      * @param keyCode the {@link android.view.KeyEvent} key code of the key event.
      * @param isDown {@code true} if the event's action is {@link KeyEvent#ACTION_DOWN}.
@@ -129,7 +130,8 @@ class WindowWakeUpPolicy {
      * @return {@code true} if the policy allows the requested wake up and the request has been
      *      executed; {@code false} otherwise.
      */
-    boolean wakeUpFromKey(long eventTime, int keyCode, boolean isDown, boolean withProximityCheck) {
+    boolean wakeUpFromKey(int displayId, long eventTime, int keyCode, boolean isDown,
+            boolean withProximityCheck) {
         final boolean wakeAllowedDuringTheaterMode =
                 keyCode == KEYCODE_POWER
                         ? mAllowTheaterModeWakeFromPowerKey
@@ -272,7 +274,8 @@ class WindowWakeUpPolicy {
     private void wakeUp(long wakeTime, @WakeReason int reason, String details,
             boolean withProximityCheck) {
         if (withProximityCheck) {
-            mPowerManager.wakeUpWithProximityCheck(wakeTime, reason, "android.policy:" + details);
+            mPowerManager.wakeUpWithProximityCheck(wakeTime, reason, "android.policy:" + details,
+                    Display.DEFAULT_DISPLAY);
         } else {
             mPowerManager.wakeUp(wakeTime, reason, "android.policy:" + details);
         }
@@ -280,9 +283,19 @@ class WindowWakeUpPolicy {
 
     /** Wakes up given display. */
     private void wakeUp(int displayId, long wakeTime, @WakeReason int reason, String details) {
+        wakeUp(displayId, wakeTime, reason, details, false);
+    }
+
+    private void wakeUp(int displayId, long wakeTime, @WakeReason int reason, String details,
+            boolean withProximityCheck) {
         // If we're given an invalid display id to wake, fall back to waking default display
         final int displayIdToWake =
                 displayId == Display.INVALID_DISPLAY ? Display.DEFAULT_DISPLAY : displayId;
-        mPowerManager.wakeUp(wakeTime, reason, "android.policy:" + details, displayIdToWake);
+        if (withProximityCheck) {
+            mPowerManager.wakeUpWithProximityCheck(wakeTime, reason, "android.policy:" + details,
+                    displayIdToWake);
+        } else {
+            mPowerManager.wakeUp(wakeTime, reason, "android.policy:" + details, displayIdToWake);
+        }
     }
 }

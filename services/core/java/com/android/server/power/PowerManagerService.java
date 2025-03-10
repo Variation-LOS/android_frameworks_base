@@ -6255,26 +6255,24 @@ public final class PowerManagerService extends SystemService
         @Override // Binder call
         public void wakeUp(long eventTime, @WakeReason int reason, String details,
                 String opPackageName) {
-            wakeUp(eventTime, reason, details, opPackageName, false);
+            wakeUpWithDisplayId(eventTime, reason, details, opPackageName, Display.DEFAULT_DISPLAY,
+                false);
         }
 
         @Override // Binder call
         public void wakeUpWithProximityCheck(long eventTime, @WakeReason int reason,
-                String details, String opPackageName) {
-            wakeUp(eventTime, reason, details, opPackageName, true);
-        }
-
-        /**
-         * @hide
-         */
-        public void wakeUp(long eventTime, @WakeReason int reason, String details,
-                String opPackageName, boolean checkProximity) {
-            wakeUpWithDisplayId(eventTime, reason, details, opPackageName, Display.DEFAULT_DISPLAY);
+                String details, String opPackageName, int displayId) {
+            wakeUpWithDisplayId(eventTime, reason, details, opPackageName, displayId, true);
         }
 
         @Override // Binder call
         public void wakeUpWithDisplayId(long eventTime, @WakeReason int reason, String details,
                 String opPackageName, int displayId) {
+            wakeUpWithDisplayId(eventTime, reason, details, opPackageName, displayId, false);
+        }
+
+        public void wakeUpWithDisplayId(long eventTime, @WakeReason int reason, String details,
+                String opPackageName, int displayId, boolean checkProximity) {
             final long now = mClock.uptimeMillis();
             if (eventTime > now) {
                 Slog.e(TAG, "Event time " + eventTime + " cannot be newer than " + now);
@@ -6285,17 +6283,21 @@ public final class PowerManagerService extends SystemService
                     android.Manifest.permission.DEVICE_POWER, null);
 
             final int uid = Binder.getCallingUid();
-            final long ident = Binder.clearCallingIdentity();
-            try {
-                int displayGroupId = getDisplayGroupId(displayId);
-                synchronized (mLock) {
-                    if (!mBootCompleted && sQuiescent) {
-                        mDirty |= DIRTY_QUIESCENT;
-                        updatePowerStateLocked();
-                        return;
+            final Runnable r = () -> {
+                final long ident = Binder.clearCallingIdentity();
+                try {
+                    int displayGroupId = getDisplayGroupId(displayId);
+                    synchronized (mLock) {
+                        if (!mBootCompleted && sQuiescent) {
+                            mDirty |= DIRTY_QUIESCENT;
+                            updatePowerStateLocked();
+                            return;
+                        }
+                        wakePowerGroupLocked(mPowerGroups.get(displayGroupId), eventTime,
+                                reason, details, uid, opPackageName, uid);
                     }
-                    wakePowerGroupLocked(mPowerGroups.get(displayGroupId), eventTime,
-                            reason, details, uid, opPackageName, uid);
+                } finally {
+                    Binder.restoreCallingIdentity(ident);
                 }
             };
             if (checkProximity) {

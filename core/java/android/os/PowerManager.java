@@ -1716,15 +1716,18 @@ public final class PowerManager {
     }
 
     /**
-     * Forces the device to wake up from sleep only if nothing is blocking the proximity sensor.
+     * Forces the display with the supplied displayId to turn on only if nothing is blocking the
+     * proximity sensor.
      *
      * @see #wakeUp
      *
      * @hide
      */
-    public void wakeUpWithProximityCheck(long time, @WakeReason int reason, String details) {
+    public void wakeUpWithProximityCheck(long time, @WakeReason int reason, String details,
+            int displayId) {
         try {
-            mService.wakeUpWithProximityCheck(time, reason, details, mContext.getOpPackageName());
+            mService.wakeUpWithProximityCheck(time, reason, details, mContext.getOpPackageName(),
+                    displayId);
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
         }
