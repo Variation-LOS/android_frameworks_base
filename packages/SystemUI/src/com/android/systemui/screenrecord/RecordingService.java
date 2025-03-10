@@ -180,8 +180,10 @@ public class RecordingService extends Service implements ScreenMediaRecorderList
             int audioSource,
             boolean showTaps,
             int displayId,
-            @Nullable MediaProjectionCaptureTarget captureTarget) {
-        return getStartIntent(context, resultCode, audioSource, showTaps, captureTarget)
+            @Nullable MediaProjectionCaptureTarget captureTarget,
+            boolean lowQuality, boolean longerDuration, boolean hevc) {
+        return getStartIntent(context, resultCode, audioSource, showTaps, captureTarget,
+                lowQuality, longerDuration, hevc)
                 .putExtra(EXTRA_DISPLAY_ID, displayId);
     }
 
