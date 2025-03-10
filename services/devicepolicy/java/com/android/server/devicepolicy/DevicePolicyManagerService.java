@@ -21598,7 +21598,8 @@ public class DevicePolicyManagerService extends IDevicePolicyManager.Stub {
             @NonNull ManagedProfileProvisioningParams provisioningParams,
             @NonNull UserHandle managedProfileUser
     ) {
-        onCreateAndProvisionManagedProfileCompleted(provisioningParams);
+        onCreateAndProvisionManagedProfileCompleted(managedProfileUser.getIdentifier(),
+                provisioningParams);
         sendProvisioningCompletedBroadcast(
                 managedProfileUser.getIdentifier(),
                 ACTION_PROVISION_MANAGED_PROFILE,
