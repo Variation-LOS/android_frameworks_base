@@ -91,6 +91,7 @@ import com.android.systemui.volume.domain.interactor.VolumeDialogInteractor;
 import com.android.systemui.volume.domain.interactor.VolumePanelNavigationInteractor;
 import com.android.systemui.volume.ui.navigation.VolumeNavigator;
 
+import com.google.android.msdl.domain.MSDLPlayer;
 import com.google.common.collect.ImmutableList;
 
 import dagger.Lazy;
@@ -167,6 +168,9 @@ public class VolumeDialogImplTest extends SysuiTestCase {
     @Mock
     private VibratorHelper mVibratorHelper;
 
+    @Mock
+    private MSDLPlayer mMSDLPlayer;
+
     private int mLongestHideShowAnimationDuration = 250;
     private FakeSettings mSecureSettings;
 
@@ -219,6 +223,7 @@ public class VolumeDialogImplTest extends SysuiTestCase {
                 mDumpManager,
                 mLazySecureSettings,
                 mVibratorHelper,
+                mMSDLPlayer,
                 new FakeSystemClock(),
                 mVolumeDialogInteractor);
         mDialog.init(0, null);

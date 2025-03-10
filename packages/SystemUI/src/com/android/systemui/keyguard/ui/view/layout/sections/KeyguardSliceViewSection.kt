@@ -23,7 +23,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.Barrier
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import com.android.systemui.customization.R as custR
+import com.android.systemui.customization.R as customR
 import com.android.systemui.keyguard.MigrateClocksToBlueprint
 import com.android.systemui.keyguard.shared.model.KeyguardSection
 import com.android.systemui.res.R
@@ -58,8 +58,9 @@ constructor(
                 ConstraintSet.START,
                 ConstraintSet.PARENT_ID,
                 ConstraintSet.START,
-                context.resources.getDimensionPixelSize(custR.dimen.clock_padding_start) +
-                    context.resources.getDimensionPixelSize(R.dimen.status_view_margin_horizontal),
+                context.resources.getDimensionPixelSize(customR.dimen.clock_padding_start) +
+                    context.resources.getDimensionPixelSize(
+                    customR.dimen.status_view_margin_horizontal),
             )
             connect(
                 R.id.keyguard_slice_view,
@@ -72,7 +73,7 @@ constructor(
             connect(
                 R.id.keyguard_slice_view,
                 ConstraintSet.TOP,
-                R.id.lockscreen_clock_view,
+                customR.id.lockscreen_clock_view,
                 ConstraintSet.BOTTOM
             )
 

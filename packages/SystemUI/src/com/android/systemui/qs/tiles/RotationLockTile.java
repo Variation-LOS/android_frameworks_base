@@ -66,7 +66,8 @@ public class RotationLockTile extends QSTileImpl<BooleanState> implements
     private static final String ROTATION_SETTINGS =
             "org.lineageos.lineageparts.DISPLAY_ROTATION";
 
-    private final Icon mIcon = ResourceIcon.get(com.android.internal.R.drawable.ic_qs_auto_rotate);
+    private final Icon mIcon =
+            maybeLoadResourceIcon(com.android.internal.R.drawable.ic_qs_auto_rotate);
     private final RotationLockController mController;
     private final SensorPrivacyManager mPrivacyManager;
     private final BatteryController mBatteryController;
@@ -163,13 +164,13 @@ public class RotationLockTile extends QSTileImpl<BooleanState> implements
                         && mController.isCameraRotationEnabled();
         state.value = !rotationLocked;
         state.label = mContext.getString(R.string.quick_settings_rotation_unlocked_label);
-        state.icon = ResourceIcon.get(R.drawable.qs_auto_rotate_icon_off);
+        state.icon = maybeLoadResourceIcon(R.drawable.qs_auto_rotate_icon_off);
         state.contentDescription = getAccessibilityString(rotationLocked);
         if (!rotationLocked) {
             state.secondaryLabel = cameraRotation ? mContext.getResources().getString(
                     R.string.rotation_lock_camera_rotation_on)
                     : EMPTY_SECONDARY_STRING;
-            state.icon = ResourceIcon.get(R.drawable.qs_auto_rotate_icon_on);
+            state.icon = maybeLoadResourceIcon(R.drawable.qs_auto_rotate_icon_on);
         } else {
             state.secondaryLabel = EMPTY_SECONDARY_STRING;
         }
