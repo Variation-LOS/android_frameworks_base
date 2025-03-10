@@ -48,12 +48,14 @@ import com.android.systemui.Dependency;
 import com.android.systemui.Flags;
 import com.android.systemui.Gefingerpoken;
 import com.android.systemui.res.R;
+import com.android.systemui.shade.ShadeExpandsOnStatusBarLongPress;
+import com.android.systemui.shade.StatusBarLongPressGestureDetector;
 import com.android.systemui.shared.rotation.FloatingRotationButton;
 import com.android.systemui.shared.rotation.RotationButtonController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.CommandQueue.Callbacks;
 import com.android.systemui.statusbar.phone.userswitcher.StatusBarUserSwitcherContainer;
-import com.android.systemui.statusbar.window.StatusBarWindowController;
+import com.android.systemui.statusbar.window.StatusBarWindowControllerStore;
 import com.android.systemui.user.ui.binder.StatusBarUserChipViewBinder;
 import com.android.systemui.user.ui.viewmodel.StatusBarUserChipViewModel;
 import com.android.systemui.util.leak.RotationUtils;
@@ -63,7 +65,7 @@ import java.util.Objects;
 public class PhoneStatusBarView extends FrameLayout implements Callbacks {
     private static final String TAG = "PhoneStatusBarView";
     private final CommandQueue mCommandQueue;
-    private final StatusBarWindowController mStatusBarWindowController;
+    private final StatusBarWindowControllerStore mStatusBarWindowControllerStore;
 
     private int mRotationOrientation = -1;
     private RotationButtonController mRotationButtonController;
@@ -82,6 +84,7 @@ public class PhoneStatusBarView extends FrameLayout implements Callbacks {
     private InsetsFetcher mInsetsFetcher;
     private int mDensity;
     private float mFontScale;
+    private StatusBarLongPressGestureDetector mStatusBarLongPressGestureDetector;
 
     /**
      * Draw this many pixels into the left/right side of the cutout to optimally use the space
@@ -91,7 +94,7 @@ public class PhoneStatusBarView extends FrameLayout implements Callbacks {
     public PhoneStatusBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mCommandQueue = Dependency.get(CommandQueue.class);
-        mStatusBarWindowController = Dependency.get(StatusBarWindowController.class);
+        mStatusBarWindowControllerStore = Dependency.get(StatusBarWindowControllerStore.class);
 
         // Only create FRB here if there is no navbar
         if (!hasNavigationBar()) {
@@ -136,6 +139,13 @@ public class PhoneStatusBarView extends FrameLayout implements Callbacks {
             return windowManager.hasNavigationBar(Display.DEFAULT_DISPLAY);
         } catch (RemoteException ex) { }
         return false;
+    }
+
+    void setLongPressGestureDetector(
+            StatusBarLongPressGestureDetector statusBarLongPressGestureDetector) {
+        if (ShadeExpandsOnStatusBarLongPress.isEnabled()) {
+            mStatusBarLongPressGestureDetector = statusBarLongPressGestureDetector;
+        }
     }
 
     void setTouchEventHandler(Gefingerpoken handler) {
@@ -266,6 +276,10 @@ public class PhoneStatusBarView extends FrameLayout implements Callbacks {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (ShadeExpandsOnStatusBarLongPress.isEnabled()
+                && mStatusBarLongPressGestureDetector != null) {
+            mStatusBarLongPressGestureDetector.handleTouch(event);
+        }
         if (mTouchEventHandler == null) {
             Log.w(
                     TAG,
@@ -413,7 +427,7 @@ public class PhoneStatusBarView extends FrameLayout implements Callbacks {
         if (Flags.statusBarStopUpdatingWindowHeight()) {
             return;
         }
-        mStatusBarWindowController.refreshStatusBarHeight();
+        mStatusBarWindowControllerStore.getDefaultDisplay().refreshStatusBarHeight();
     }
 
     interface HasCornerCutoutFetcher {

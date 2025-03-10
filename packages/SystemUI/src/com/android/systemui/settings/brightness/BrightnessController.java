@@ -45,6 +45,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
+import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.display.BrightnessSynchronizer;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -115,6 +116,7 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
     private boolean mControlValueInitialized;
     private float mBrightnessMin = PowerManager.BRIGHTNESS_MIN;
     private float mBrightnessMax = PowerManager.BRIGHTNESS_MAX;
+    private boolean mIsBrightnessOverriddenByWindow = false;
 
     private ValueAnimator mSliderAnimator;
 
@@ -251,12 +253,14 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
         @Override
         public void run() {
             final boolean inVrMode = mIsVrModeEnabled;
-            final BrightnessInfo info = mContext.getDisplay().getBrightnessInfo();
+            final BrightnessInfo info = getBrightnessInfo();
             if (info == null) {
                 return;
             }
             mBrightnessMax = info.brightnessMaximum;
             mBrightnessMin = info.brightnessMinimum;
+            mIsBrightnessOverriddenByWindow = info.isBrightnessOverrideByWindow;
+
             // Value is passed as intbits, since this is what the message takes.
             final int valueAsIntBits = Float.floatToIntBits(info.brightness);
             mMainHandler.obtainMessage(MSG_UPDATE_SLIDER, valueAsIntBits,
@@ -369,7 +373,19 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
         boolean starting = !mTrackingTouch && tracking;
         mTrackingTouch = tracking;
         updateIcon(mAutomatic);
-        if (mExternalChange) return;
+        if (starting) {
+            if (Flags.showToastWhenAppControlBrightness()) {
+                // Showing the warning toast if the current running app window has
+                // controlled the brightness value.
+                if (mIsBrightnessOverriddenByWindow) {
+                    mControl.showToast(R.string.quick_settings_brightness_unable_adjust_msg);
+                }
+            }
+        }
+        if (mExternalChange
+                || (Flags.showToastWhenAppControlBrightness() && mIsBrightnessOverriddenByWindow)) {
+            return;
+        }
 
         if (mSliderAnimator != null) {
             mSliderAnimator.cancel();
@@ -438,6 +454,11 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
 
     private void setBrightness(float brightness) {
         mDisplayManager.setTemporaryBrightness(mDisplayId, brightness);
+    }
+
+    @VisibleForTesting
+    BrightnessInfo getBrightnessInfo() {
+        return mContext.getDisplay().getBrightnessInfo();
     }
 
     private void updateIcon(boolean automatic) {

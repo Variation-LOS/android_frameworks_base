@@ -17,6 +17,7 @@ package com.android.systemui.battery;
 
 import static com.android.settingslib.flags.Flags.newStatusBarIcons;
 import static com.android.systemui.DejankUtils.whitelistIpcs;
+import static com.android.systemui.Flags.gsfQuickSettings;
 
 import static lineageos.providers.LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT;
 
@@ -33,6 +34,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 import android.text.TextUtils;
@@ -404,6 +406,9 @@ public class BatteryMeterView extends LinearLayout implements DarkReceiver {
         }
         float fontHeight = mBatteryPercentView.getPaint().getFontMetricsInt(null);
         mBatteryPercentView.setLineHeight(TypedValue.COMPLEX_UNIT_PX, fontHeight);
+        if (gsfQuickSettings()) {
+            mBatteryPercentView.setTypeface(Typeface.create("gsf-label-large", Typeface.NORMAL));
+        }
         if (mTextColor != 0) mBatteryPercentView.setTextColor(mTextColor);
         addView(mBatteryPercentView, new LayoutParams(
                 LayoutParams.WRAP_CONTENT,

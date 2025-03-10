@@ -17,6 +17,7 @@
 package com.android.systemui.authentication.domain.interactor
 
 import android.os.UserHandle
+import com.android.app.tracing.coroutines.launchTraced as launch
 import com.android.internal.widget.LockPatternUtils
 import com.android.internal.widget.LockPatternView
 import com.android.internal.widget.LockscreenCredential
@@ -49,7 +50,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 
 /**
  * Hosts application business logic related to user authentication.
@@ -218,7 +218,7 @@ constructor(
      */
     suspend fun authenticate(
         input: List<Any>,
-        tryAutoConfirm: Boolean = false
+        tryAutoConfirm: Boolean = false,
     ): AuthenticationResult {
         if (input.isEmpty()) {
             throw IllegalArgumentException("Input was empty!")
@@ -255,6 +255,20 @@ constructor(
 
         _onAuthenticationResult.emit(false)
         return AuthenticationResult.FAILED
+    }
+
+    /**
+     * Returns the device policy enforced maximum time to lock the device, in milliseconds. When the
+     * device goes to sleep, this is the maximum time the device policy allows to wait before
+     * locking the device, despite what the user setting might be set to.
+     */
+    suspend fun getMaximumTimeToLock(): Long {
+        return repository.getMaximumTimeToLock()
+    }
+
+    /** Returns `true` if the power button should instantly lock the device, `false` otherwise. */
+    suspend fun getPowerButtonInstantlyLocks(): Boolean {
+        return !getAuthenticationMethod().isSecure || repository.getPowerButtonInstantlyLocks()
     }
 
     private suspend fun shouldSkipAuthenticationAttempt(
@@ -324,7 +338,7 @@ constructor(
     }
 
     private suspend fun initiateGarbageCollection(delay: Duration) {
-        applicationScope.launch(backgroundDispatcher) {
+        applicationScope.launch(context = backgroundDispatcher) {
             delay(delay)
             System.gc()
             System.runFinalization()

@@ -37,9 +37,7 @@ import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.currentTime
 
-class FakeAuthenticationRepository(
-    private val currentTime: () -> Long,
-) : AuthenticationRepository {
+class FakeAuthenticationRepository(private val currentTime: () -> Long) : AuthenticationRepository {
 
     override val hintedPinLength: Int = HINTING_PIN_LENGTH
 
@@ -74,6 +72,9 @@ class FakeAuthenticationRepository(
     var lockoutStartedReportCount = 0
 
     private val credentialCheckingMutex = Mutex(locked = false)
+
+    var maximumTimeToLock: Long = 0
+    var powerButtonInstantlyLocks: Boolean = true
 
     override suspend fun getAuthenticationMethod(): AuthenticationMethodModel {
         return authenticationMethod.value
@@ -117,6 +118,7 @@ class FakeAuthenticationRepository(
         MAX_FAILED_AUTH_TRIES_BEFORE_WIPE
 
     var profileWithMinFailedUnlockAttemptsForWipe: Int = UserHandle.USER_SYSTEM
+
     override suspend fun getProfileWithMinFailedUnlockAttemptsForWipe(): Int =
         profileWithMinFailedUnlockAttemptsForWipe
 
@@ -147,10 +149,7 @@ class FakeAuthenticationRepository(
 
             val failedAttempts = _failedAuthenticationAttempts.value
             if (isSuccessful || failedAttempts < MAX_FAILED_AUTH_TRIES_BEFORE_LOCKOUT - 1) {
-                AuthenticationResultModel(
-                    isSuccessful = isSuccessful,
-                    lockoutDurationMs = 0,
-                )
+                AuthenticationResultModel(isSuccessful = isSuccessful, lockoutDurationMs = 0)
             } else {
                 AuthenticationResultModel(
                     isSuccessful = false,
@@ -179,6 +178,14 @@ class FakeAuthenticationRepository(
      */
     fun unpauseCredentialChecking() {
         credentialCheckingMutex.unlock()
+    }
+
+    override suspend fun getMaximumTimeToLock(): Long {
+        return maximumTimeToLock
+    }
+
+    override suspend fun getPowerButtonInstantlyLocks(): Boolean {
+        return powerButtonInstantlyLocks
     }
 
     private fun getExpectedCredential(securityMode: SecurityMode): List<Any> {
@@ -222,9 +229,7 @@ class FakeAuthenticationRepository(
         }
 
         @LockPatternUtils.CredentialType
-        private fun getCurrentCredentialType(
-            securityMode: SecurityMode,
-        ): Int {
+        private fun getCurrentCredentialType(securityMode: SecurityMode): Int {
             return when (securityMode) {
                 SecurityMode.PIN,
                 SecurityMode.SimPin,
@@ -265,9 +270,8 @@ class FakeAuthenticationRepository(
 object FakeAuthenticationRepositoryModule {
     @Provides
     @SysUISingleton
-    fun provideFake(
-        scope: TestScope,
-    ) = FakeAuthenticationRepository(currentTime = { scope.currentTime })
+    fun provideFake(scope: TestScope) =
+        FakeAuthenticationRepository(currentTime = { scope.currentTime })
 
     @Module
     interface Bindings {

@@ -33,7 +33,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.app.IActivityManager;
-import android.app.admin.DevicePolicyManager;
 import android.app.trust.TrustManager;
 import android.content.pm.PackageManager;
 import android.content.pm.UserInfo;
@@ -80,7 +79,9 @@ import com.android.systemui.statusbar.phone.LightBarController;
 import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.statusbar.policy.KeyguardStateController;
 import com.android.systemui.statusbar.window.StatusBarWindowController;
+import com.android.systemui.statusbar.window.StatusBarWindowControllerStore;
 import com.android.systemui.user.domain.interactor.SelectedUserInteractor;
+import com.android.systemui.user.domain.interactor.UserLogoutInteractor;
 import com.android.systemui.util.RingerModeLiveData;
 import com.android.systemui.util.RingerModeTracker;
 import com.android.systemui.util.settings.FakeGlobalSettings;
@@ -107,7 +108,6 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
 
     @Mock private GlobalActions.GlobalActionsManager mWindowManagerFuncs;
     @Mock private AudioManager mAudioManager;
-    @Mock private DevicePolicyManager mDevicePolicyManager;
     @Mock private LockPatternUtils mLockPatternUtils;
     @Mock private BroadcastDispatcher mBroadcastDispatcher;
     private GlobalSettings mGlobalSettings;
@@ -126,6 +126,7 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
     @Mock private LightBarController mLightBarController;
     @Mock private NotificationShadeWindowController mNotificationShadeWindowController;
     @Mock private StatusBarWindowController mStatusBarWindowController;
+    @Mock private StatusBarWindowControllerStore mStatusBarWindowControllerStore;
     @Mock private IWindowManager mWindowManager;
     @Mock private Executor mBackgroundExecutor;
     @Mock private UiEventLogger mUiEventLogger;
@@ -139,6 +140,7 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
     @Mock private KeyguardUpdateMonitor mKeyguardUpdateMonitor;
     @Mock private DialogTransitionAnimator mDialogTransitionAnimator;
     @Mock private SelectedUserInteractor mSelectedUserInteractor;
+    @Mock private UserLogoutInteractor mLogoutInteractor;
     @Mock private ControlsComponent mControlsComponent;
     @Mock private OnBackInvokedDispatcher mOnBackInvokedDispatcher;
     @Captor private ArgumentCaptor<OnBackInvokedCallback> mOnBackInvokedCallback;
@@ -157,7 +159,8 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
         when(mUserContextProvider.getUserContext()).thenReturn(mContext);
         when(mResources.getConfiguration()).thenReturn(
                 getContext().getResources().getConfiguration());
-
+        when(mStatusBarWindowControllerStore.getDefaultDisplay())
+                .thenReturn(mStatusBarWindowController);
         mGlobalSettings = new FakeGlobalSettings();
         mSecureSettings = new FakeSettings();
         mInteractor = mKosmos.getGlobalActionsInteractor();
@@ -165,7 +168,6 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
         mGlobalActionsDialogLite = new GlobalActionsDialogLite(mContext,
                 mWindowManagerFuncs,
                 mAudioManager,
-                mDevicePolicyManager,
                 mLockPatternUtils,
                 mBroadcastDispatcher,
                 mGlobalSettings,
@@ -185,7 +187,7 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
                 mStatusBarService,
                 mLightBarController,
                 mNotificationShadeWindowController,
-                mStatusBarWindowController,
+                mStatusBarWindowControllerStore,
                 mWindowManager,
                 mBackgroundExecutor,
                 mUiEventLogger,
@@ -196,6 +198,7 @@ public class GlobalActionsDialogLiteTest extends SysuiTestCase {
                 mKeyguardUpdateMonitor,
                 mDialogTransitionAnimator,
                 mSelectedUserInteractor,
+                mLogoutInteractor,
                 mInteractor,
                 mControlsComponent);
         mGlobalActionsDialogLite.setZeroDialogPressDelayForTesting();

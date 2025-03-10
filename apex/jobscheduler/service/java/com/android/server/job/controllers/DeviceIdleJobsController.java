@@ -214,7 +214,9 @@ public final class DeviceIdleJobsController extends StateController {
     }
 
     private boolean updateTaskStateLocked(JobStatus task, final long nowElapsed) {
-        final boolean allowInIdle = ((task.getFlags()&JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0)
+        final boolean allowInIdle =
+                (!android.app.job.Flags.ignoreImportantWhileForeground()
+                        && ((task.getFlags() & JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0))
                 && (mForegroundUids.get(task.getSourceUid()) || isTempWhitelistedLocked(task));
         final boolean whitelisted = isWhitelistedLocked(task);
         final boolean enableTask = !mDeviceIdleMode || whitelisted || allowInIdle;
@@ -223,7 +225,8 @@ public final class DeviceIdleJobsController extends StateController {
 
     @Override
     public void maybeStartTrackingJobLocked(JobStatus jobStatus, JobStatus lastJob) {
-        if ((jobStatus.getFlags()&JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0) {
+        if (!android.app.job.Flags.ignoreImportantWhileForeground()
+                && (jobStatus.getFlags() & JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0) {
             mAllowInIdleJobs.add(jobStatus);
         }
         updateTaskStateLocked(jobStatus, sElapsedRealtimeClock.millis());
@@ -231,7 +234,8 @@ public final class DeviceIdleJobsController extends StateController {
 
     @Override
     public void maybeStopTrackingJobLocked(JobStatus jobStatus, JobStatus incomingJob) {
-        if ((jobStatus.getFlags()&JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0) {
+        if (!android.app.job.Flags.ignoreImportantWhileForeground()
+                && (jobStatus.getFlags() & JobInfo.FLAG_IMPORTANT_WHILE_FOREGROUND) != 0) {
             mAllowInIdleJobs.remove(jobStatus);
         }
     }
