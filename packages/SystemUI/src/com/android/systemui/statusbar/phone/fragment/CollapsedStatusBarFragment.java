@@ -71,7 +71,7 @@ import com.android.systemui.statusbar.phone.StatusBarHideIconsForBouncerManager;
 import com.android.systemui.statusbar.phone.StatusBarLocation;
 import com.android.systemui.statusbar.phone.fragment.dagger.HomeStatusBarComponent;
 import com.android.systemui.statusbar.phone.fragment.dagger.HomeStatusBarComponent.Startable;
-import com.android.systemui.statusbar.phone.fragment.dagger.StatusBarFragmentScope;
+import com.android.systemui.statusbar.phone.fragment.dagger.HomeStatusBarScope;
 import com.android.systemui.statusbar.phone.ongoingcall.OngoingCallController;
 import com.android.systemui.statusbar.phone.ongoingcall.OngoingCallListener;
 import com.android.systemui.statusbar.phone.ongoingcall.StatusBarChipsModernization;
@@ -358,7 +358,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mStartableStates.put(startable, Startable.State.STARTED);
         }
 
-        mStatusBarViewController = mStatusBarFragmentComponent
+        mStatusBarViewController = mHomeStatusBarComponent
                 .getPhoneStatusBarViewController();
         mClockController = mStatusBarViewController.getClockController();
         mStatusBar = (PhoneStatusBarView) view;
