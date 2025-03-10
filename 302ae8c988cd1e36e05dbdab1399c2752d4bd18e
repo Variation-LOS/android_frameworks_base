@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87922ce0_e2ab2fd2",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/UdfpsSurfaceView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 32197
+      },
+      "writtenOn": "2025-03-10T01:38:07Z",
+      "side": 1,
+      "message": "```suggestion\n    public interface GhbmIlluminationListener {\n```",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 13
+      },
+      "revId": "302ae8c988cd1e36e05dbdab1399c2752d4bd18e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
