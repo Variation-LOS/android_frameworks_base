@@ -92,7 +92,7 @@ constructor(
         dismissDialog()
 
         if (SystemProperties.getBoolean(DISABLE_MIRRORING_CONFIRMATION_DIALOG, false)) {
-            scope.launch(bgDispatcher) { pendingDisplay.enable() }
+            scope.launch(context = bgDispatcher) { pendingDisplay.enable() }
             return
         }
 
