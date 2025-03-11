@@ -1074,8 +1074,8 @@ public final class BatteryService extends SystemService {
                 mLastBroadcastBatteryCycleCount = mHealthInfo.batteryCycleCount;
                 mLastBroadcastChargingState = mHealthInfo.chargingState;
                 mLastBroadcastBatteryCapacityLevel = mHealthInfo.batteryCapacityLevel;
-                mLastBatteryFullCharge = mHealthInfo.batteryFullChargeUah;
-                mLastBatteryFullChargeDesign = mHealthInfo.batteryFullChargeDesignCapacityUah;
+                mLastBroadcastBatteryFullCharge = mHealthInfo.batteryFullChargeUah;
+                mLastBroadcastBatteryFullChargeDesign = mHealthInfo.batteryFullChargeDesignCapacityUah;
                 mLastModLevel = mBatteryModProps.modLevel;
                 mLastModStatus = mBatteryModProps.modStatus;
                 mLastModFlag = mBatteryModProps.modFlag;
