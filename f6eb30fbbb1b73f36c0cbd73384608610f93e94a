@@ -16,6 +16,24 @@
       "message": "frameworks/base/services/core/java/com/android/server/BatteryService.java:1077: error: cannot find symbol\n                mLastBatteryFullCharge \u003d mHealthInfo.batteryFullChargeUah;\n                ^\n  symbol:   variable mLastBatteryFullCharge\n  location: class BatteryService\nframeworks/base/services/core/java/com/android/server/BatteryService.java:1078: error: cannot find symbol\n                mLastBatteryFullChargeDesign \u003d mHealthInfo.batteryFullChargeDesignCapacityUah;\n                ^\n  symbol:   variable mLastBatteryFullChargeDesign\n  location: class BatteryService\n2 errors\n21:31:44 ninja failed with: exit status 1\nThere was 1 action that completed after the action that failed. See verbose.log.gz for its output.",
       "revId": "f6eb30fbbb1b73f36c0cbd73384608610f93e94a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3108a391_5fdbaa22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20370
+      },
+      "writtenOn": "2025-03-12T20:06:19Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/422474",
+      "parentUuid": "a8bf15f5_1cb5acc3",
+      "revId": "f6eb30fbbb1b73f36c0cbd73384608610f93e94a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
