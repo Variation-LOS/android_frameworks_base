@@ -110,6 +110,9 @@ interface ISystemUiProxy {
     /** Sets home rotation enabled. */
     oneway void setHomeRotationEnabled(boolean enabled) = 45;
 
+    /** Injects button long press. */
+    oneway void injectLongPress(int keyCode) = 46;
+
     /** Notifies when taskbar is enabled or disabled */
     oneway void setTaskbarEnabled(boolean enabled) = 500;
 
