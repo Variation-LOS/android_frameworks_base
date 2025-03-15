@@ -116,9 +116,6 @@ interface ISystemUiProxy {
     /** Injects button press. */
     oneway void injectDoublePress(int keyCode) = 43;
 
-    /** Notifies when taskbar is enabled or disabled */
-    oneway void setTaskbarEnabled(boolean enabled) = 500;
-
     /** Notifies when taskbar status updated */
     oneway void notifyTaskbarStatus(boolean visible, boolean stashed) = 47;
 
