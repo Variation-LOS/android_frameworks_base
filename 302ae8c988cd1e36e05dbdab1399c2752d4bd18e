@@ -22,6 +22,30 @@
       },
       "revId": "302ae8c988cd1e36e05dbdab1399c2752d4bd18e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "271786a3_3b31fe26",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/UdfpsSurfaceView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-03-27T08:46:42Z",
+      "side": 1,
+      "message": "Why is this needed? It works fine as-is",
+      "parentUuid": "87922ce0_e2ab2fd2",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 13
+      },
+      "revId": "302ae8c988cd1e36e05dbdab1399c2752d4bd18e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
