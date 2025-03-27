@@ -1090,7 +1090,7 @@ public class KeyguardIndicationController {
      * Assumption: device is charging
      */
     protected String computePowerIndication() {
-        if (mBatteryDefender) {
+        if (mBatteryDefender && mPowerCharged) {
             String percentage = NumberFormat.getPercentInstance().format(mBatteryLevel / 100f);
             return mContext.getResources().getString(
                     R.string.keyguard_plugged_in_charging_limited, percentage);
