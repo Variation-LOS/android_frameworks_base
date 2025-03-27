@@ -33,6 +33,24 @@
       "message": "I think this change is okay.\n\n1. Existing users who already have the change this fixes, will not be impacted by this fix. I think that is fine. As of now, their firewall settings \"are what they are\"; regardless of what may have happened, we don\u0027t want to change those settings unexpectedly now!\n2. With this change, new users should be properly migrated.\n\nBut that being said, it would be nice to test it, and also to know exactly what happened to devices that didn\u0027t actually get this migration.",
       "revId": "420dddfea5b3f822deca92c37dbb0b0be4397e86",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20278c33_1e638f65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2025-03-27T17:46:07Z",
+      "side": 1,
+      "message": "I think the \"would be nice\" parts are fine to skip, given the other points. Not everything can be nice :\u0027(",
+      "parentUuid": "c89dfaf2_1e003451",
+      "revId": "420dddfea5b3f822deca92c37dbb0b0be4397e86",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
