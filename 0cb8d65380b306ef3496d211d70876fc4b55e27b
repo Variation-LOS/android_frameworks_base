@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36637a08_ff8f3810",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/KeyguardIndicationController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-03-28T19:49:20Z",
+      "side": 1,
+      "message": "Trailing space",
+      "revId": "0cb8d65380b306ef3496d211d70876fc4b55e27b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
