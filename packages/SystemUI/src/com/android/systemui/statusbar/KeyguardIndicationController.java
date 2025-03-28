@@ -122,6 +122,8 @@ import com.android.systemui.util.concurrency.DelayableExecutor;
 import com.android.systemui.util.wakelock.SettableWakeLock;
 import com.android.systemui.util.wakelock.WakeLock;
 
+import lineageos.health.HealthInterface;
+
 import java.io.PrintWriter;
 import java.text.NumberFormat;
 import java.util.Set;
@@ -224,6 +226,9 @@ public class KeyguardIndicationController {
     private Set<Integer> mCoExFaceAcquisitionMsgIdsToShow;
     private final FaceHelpMessageDeferral mFaceAcquiredMessageDeferral;
     private boolean mInited;
+
+    private HealthInterface mLineageHealthInterface;
+    private int mChargingLimit = 0;
 
     private KeyguardUpdateMonitorCallback mUpdateMonitorCallback;
 
@@ -386,6 +391,16 @@ public class KeyguardIndicationController {
         mKeyguardStateController.addCallback(mKeyguardStateCallback);
 
         mStatusBarStateListener.onDozingChanged(mStatusBarStateController.isDozing());
+
+        HealthInterface lineageHealthInterface;
+        try {
+            lineageHealthInterface = HealthInterface.getInstance(mContext);
+        } catch (RuntimeException e) {
+            mKeyguardLogger.log(TAG, LogLevel.INFO, "Unable to get HealthInterface instance. Health service is not available.");
+            lineageHealthInterface = null;
+        }
+
+        mLineageHealthInterface = lineageHealthInterface;
     }
 
     @Nullable
@@ -1090,7 +1105,9 @@ public class KeyguardIndicationController {
      * Assumption: device is charging
      */
     protected String computePowerIndication() {
-        if (mBatteryDefender) {
+        if (mChargingLimit > 0 && mBatteryLevel > mChargingLimit) {
+            return computePowerChargingStringIndication(); 
+        } else if (mBatteryDefender) {
             String percentage = NumberFormat.getPercentInstance().format(mBatteryLevel / 100f);
             return mContext.getResources().getString(
                     R.string.keyguard_plugged_in_charging_limited, percentage);
@@ -1269,6 +1286,11 @@ public class KeyguardIndicationController {
          */
         @Override
         public void onRefreshBatteryInfo(BatteryStatus status) {
+            if (mLineageHealthInterface != null) {
+                int limit = mLineageHealthInterface.getLimit();
+                mChargingLimit = limit;
+            }
+
             boolean isChargingOrFull = status.status == BatteryManager.BATTERY_STATUS_CHARGING
                     || status.isCharged();
             boolean wasPluggedIn = mPowerPluggedIn;
