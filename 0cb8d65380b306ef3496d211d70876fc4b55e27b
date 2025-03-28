@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "efc929ba_5638b331",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/KeyguardIndicationController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-03-28T20:07:43Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "0cb8d65380b306ef3496d211d70876fc4b55e27b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "36637a08_ff8f3810",
         "filename": "packages/SystemUI/src/com/android/systemui/statusbar/KeyguardIndicationController.java",
         "patchSetId": 1
