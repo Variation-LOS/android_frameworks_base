@@ -54,6 +54,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b5ff251_07d382e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-03-30T11:58:41Z",
+      "side": 1,
+      "message": "It seems this issue only appears occasionally on 4.19-q kernel, on 4.19-stable this doesnt happen at all, maybe it was a kernel mismerge or whatever, who knows.",
+      "parentUuid": "d6c6d3e7_f1817eea",
+      "revId": "0416e0c5fbdf8e1275ad3ea50b6c2e09b29873f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bf9187d_a0f06481",
