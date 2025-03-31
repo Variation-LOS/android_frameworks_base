@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb011f9d_58265436",
+        "filename": "services/core/java/com/android/server/BatteryService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-31T14:17:41Z",
+      "side": 1,
+      "message": "Can probably use mLineageHealthInterface directly.\nOn failure it\u0027ll be null so no extra code is needed in the catch",
+      "revId": "f642e3786420bb35cbe026988c483b0e8aaa4244",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
