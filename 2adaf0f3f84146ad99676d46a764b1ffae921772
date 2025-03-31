@@ -16,6 +16,24 @@
       "message": "As per the (private) https://issuetracker.google.com/issues/405152873, this patch is only applicable to Android 14+, not for Android 13.",
       "revId": "2adaf0f3f84146ad99676d46a764b1ffae921772",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbbe4ad2_339aed9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2025-03-31T06:33:07Z",
+      "side": 1,
+      "message": "Thanks for checking, Luca!",
+      "parentUuid": "6461adc2_ef8dd0a6",
+      "revId": "2adaf0f3f84146ad99676d46a764b1ffae921772",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
