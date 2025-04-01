@@ -44,7 +44,7 @@
     <string name="accessibility_quick_settings_caffeine_on">Cafeína ligada.</string>
     <string name="quick_settings_heads_up_label">Notificações pop-up</string>
     <string name="accessibility_quick_settings_heads_up_off">Notificações pop-up desativadas.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Notificações pop-up desativadas.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notificações pop-up ativadas.</string>
     <string name="quick_settings_powershare_label">Wireless PowerShare</string>
     <string name="quick_settings_powershare_off_powersave_label">Wireless PowerShare desativado\nEconomia de bateria</string>
     <string name="quick_settings_powershare_off_low_battery_label">Wireless PowerShare desativado\nBateria fraca</string>
