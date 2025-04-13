@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a93e96e5_90e1e019",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35166
+      },
+      "writtenOn": "2025-04-13T15:17:38Z",
+      "side": 1,
+      "message": "Is it possible this breaks the cursor keys in the button area? I used those a lot, can\u0027t find them since the 20250512 update on beyond2lte",
+      "revId": "b66cd0af3b4021aca8d9eaaf01a8f89d5ea20c89",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
