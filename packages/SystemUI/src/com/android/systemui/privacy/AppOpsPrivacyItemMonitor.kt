@@ -89,6 +89,7 @@ class AppOpsPrivacyItemMonitor @Inject constructor(
         ) {
             synchronized(lock) {
                 // Check if we care about this code right now
+                logger.logUpdatedItemFromAppOps(-1 * code, uid, packageName, active)
                 if (code in OPS_MIC_CAMERA && !micCameraAvailable) {
                     return
                 }

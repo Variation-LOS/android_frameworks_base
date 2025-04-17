@@ -25,9 +25,11 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.util.Slog;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -39,6 +41,7 @@ import java.util.Objects;
  * @hide
  */
 public class PermissionCheckerManager {
+    private static final String TAG = PermissionCheckerManager.class.getSimpleName();
 
     /**
      * The permission is granted.
@@ -116,6 +119,14 @@ public class PermissionCheckerManager {
             int attributedOp) {
         Objects.requireNonNull(permission);
         Objects.requireNonNull(attributionSource);
+        Slog.w(TAG, "checkPermission: permission=" + permission
+                + ", attributionSource=" + attributionToString(attributionSource)
+                + ", message=" + message
+                + ", forDataDelivery=" + forDataDelivery
+                + ", startDataDelivery=" + startDataDelivery
+                + ", fromDatasource=" + fromDatasource
+                + ", attributedOp=" + attributedOp
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         // Fast path for non-runtime, non-op permissions where the attribution chain has
         // length one. This is the majority of the cases and we want these to be fast by
         // hitting the local in process permission cache.
@@ -152,6 +163,10 @@ public class PermissionCheckerManager {
     public void finishDataDelivery(int op, @NonNull AttributionSourceState attributionSource,
             boolean fromDatasource) {
         Objects.requireNonNull(attributionSource);
+        Slog.w(TAG, "finishDataDelivery: op=" + op
+                + ", attributionSource=" + attributionToString(attributionSource)
+                + ", fromDatasource=" + fromDatasource
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         try {
             mService.finishDataDelivery(op, attributionSource, fromDatasource);
         } catch (RemoteException e) {
@@ -175,6 +190,12 @@ public class PermissionCheckerManager {
     public int checkOp(int op, @NonNull AttributionSourceState attributionSource,
             @Nullable String message, boolean forDataDelivery, boolean startDataDelivery) {
         Objects.requireNonNull(attributionSource);
+        Slog.w(TAG, "checkOp: op=" + op
+                + ", attributionSource=" + attributionToString(attributionSource)
+                + ", message=" + message
+                + ", forDataDelivery=" + forDataDelivery
+                + ", startDataDelivery=" + startDataDelivery
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         try {
             return mService.checkOp(op, attributionSource, message, forDataDelivery,
                     startDataDelivery);
@@ -182,5 +203,21 @@ public class PermissionCheckerManager {
             e.rethrowFromSystemServer();
         }
         return PERMISSION_HARD_DENIED;
+    }
+
+    private static String attributionToString(AttributionSourceState attributionSource) {
+        if (attributionSource == null) return null;
+        final int nextLength = attributionSource.next == null ? 0 : attributionSource.next.length;
+        final String renouncedPermissions = attributionSource.renouncedPermissions == null
+                ? null : ("" + Arrays.asList(attributionSource.renouncedPermissions));
+        return "{packageName=" + attributionSource.packageName
+                + ", pid=" + attributionSource.pid
+                + ", uid=" + attributionSource.uid
+                + ", deviceId=" + attributionSource.deviceId
+                + ", attributionTag=" + attributionSource.attributionTag
+                + ", token=" + attributionSource.token
+                + ", renouncedPermissions=" + renouncedPermissions
+                + ", next=<size=" + nextLength + ">"
+                + "}";
     }
 }
