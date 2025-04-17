@@ -75,7 +75,7 @@ public class AppOpsControllerImpl extends BroadcastReceiver implements AppOpsCon
     // notified to listeners.
     private static final long NOTED_OP_TIME_DELAY_MS = 5000;
     private static final String TAG = "AppOpsControllerImpl";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     private final BroadcastDispatcher mDispatcher;
     private final Context mContext;
