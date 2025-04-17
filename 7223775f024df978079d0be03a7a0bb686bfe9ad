@@ -34,6 +34,24 @@
       "parentUuid": "2627e2a3_cc584e95",
       "revId": "7223775f024df978079d0be03a7a0bb686bfe9ad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0dfd1dc_36361fe6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2025-04-17T14:15:05Z",
+      "side": 1,
+      "message": "Good catch, thanks, although sadly [that change](https://android.googlesource.com/platform/frameworks/base/+/a8eb60f82c9503214522b31679de3006c66ca577%5E%21/#F0) brings us to exactly what we have today, which is [broken](https://gitlab.com/CalyxOS/calyxos/-/issues/3123).\n\nI guess at least having found both we can evaluate the situation better.",
+      "parentUuid": "d8212490_e90ec951",
+      "revId": "7223775f024df978079d0be03a7a0bb686bfe9ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
