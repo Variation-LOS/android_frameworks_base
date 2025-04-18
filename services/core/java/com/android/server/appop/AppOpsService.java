@@ -3971,6 +3971,8 @@ public class AppOpsService extends IAppOpsService.Stub {
                                 + AppOpsManager.flagsToString(flags));
                     }
                     attributedOp.rejected(uidState.getState(), flags);
+                    attributedOp.maybeStartedOrPausedRecordingForExistingIncrementOnly(
+                            code, uidMode, clientId, /* isStarted */ !isRestricted);
                     scheduleOpStartedIfNeededLocked(code, uid, packageName, attributionTag,
                             virtualDeviceId, flags, uidMode, startType, attributionFlags,
                             attributionChainId);
