@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd4dc5ab_a8484fd1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32856
+      },
+      "writtenOn": "2025-04-18T08:47:20Z",
+      "side": 1,
+      "message": "[2/2] patch is missing related to this commit, pls track \"packages/modules/IntentResolver\" repo \u0026 cherry-pick this https://android.googlesource.com/platform/packages/modules/IntentResolver/+/20cef18d8d9b817823d8d8d505cc382d3b334f34\n\nPatch is related to: CVE-2025-22433",
+      "revId": "d1c3f46630fed780220d29108e275e54a278cbc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
