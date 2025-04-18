@@ -34,6 +34,24 @@
       "parentUuid": "dd4dc5ab_a8484fd1",
       "revId": "d1c3f46630fed780220d29108e275e54a278cbc8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94a4ebce_35c2ddce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17656
+      },
+      "writtenOn": "2025-04-18T09:57:50Z",
+      "side": 1,
+      "message": "Have opened devrel-int issue to get a fork",
+      "parentUuid": "0d25c643_532c4b36",
+      "revId": "d1c3f46630fed780220d29108e275e54a278cbc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
