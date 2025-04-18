@@ -17,8 +17,15 @@
 package com.android.server.appop;
 
 import static android.app.AppOpsManager.MODE_ALLOWED;
+import static android.app.AppOpsManager.MODE_IGNORED;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO_HOTWORD;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO_OUTPUT;
+import static android.app.AppOpsManager.OP_RECORD_INCOMING_PHONE_AUDIO;
 import static android.app.AppOpsManager.OnOpStartedListener.START_TYPE_RESUMED;
 import static android.app.AppOpsManager.makeKey;
+
+import static com.android.server.appop.AppOpsService.TAG;
 
 import android.annotation.IntRange;
 import android.annotation.NonNull;
@@ -30,6 +37,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.ArrayMap;
 import android.util.ArraySet;
+import android.util.Log;
 import android.util.LongSparseArray;
 import android.util.Pools;
 import android.util.Slog;
@@ -43,6 +51,7 @@ import java.util.function.Consumer;
 
 final class AttributedOp {
     private final @NonNull AppOpsService mAppOpsService;
+    private final boolean LOGV = Log.isLoggable(TAG, Log.VERBOSE);
     public final @Nullable String tag;
     public final @NonNull String persistentDeviceId;
     public final @NonNull AppOpsService.Op parent;
@@ -256,6 +265,114 @@ final class AttributedOp {
             mAppOpsService.mHistoricalRegistry.incrementOpAccessedCount(parent.op, parent.uid,
                     parent.packageName, persistentDeviceId, tag, uidState, flags, startTime,
                     attributionFlags, attributionChainId, DiscreteRegistry.ACCESS_TYPE_START_OP);
+        }
+    }
+
+    /**
+     * <p>Whether or not to work around de-sync of app ops state for audio recording.</p>
+     *
+     * <p>There is a de-synchronization of the in-use state of audio recording between
+     * various system components resulting from a different conception of what constitutes
+     * "in use" across these components, along with some spaghettification / diffusion of
+     * responsibility that leads to improper accounting.</p>
+     *
+     * <p>Here are some of the involved components:
+     * <ul>
+     * <li><b>AppOps</b> (fw/b/../appop)<ul>
+     *   <li>Marks and tracks ops as started, finished, etc, guided by permission checks,
+     *     uid states, restrictions, and more.</li>
+     * </ul></li>
+     * <li><b>Permissions</b> (fw/b/../pm/permission)<ul>
+     *   <li>Notifies AppOps that an operation is started or completed. Alters this behavior
+     *   depending on whether a permission is "soft-denied" (e.g. mic access off globally).</li>
+     * </ul></li>
+     * <li><b>AudioPolicy</b> (fw/av/services/audiopolicy)<ul>
+     *   <li>Manages actual underlying state of audio input, providing silent audio when permissions
+     *   are "soft-denied", allowing a continuous audio stream which can be silenced and unsilenced
+     *   based on whether microphone access is allowed in general.</li>
+     * </ul></li>
+     * </ul>
+     * </p>
+     *
+     * <p>An audio operation can be rejected when an application is in the background, but in this
+     * case, the app may be provided with silent audio that could be unsilenced later,
+     * so this type of rejection needs to be counted, too. This is necessary to pass this test
+     * (split to two lines due to length):</p>
+     * <pre>android.media.audio.cts.audiorecordpermissiontests.AudioRecordPermissionTests<br/>
+     * #testIfRecording_whenSecondRecordingSilencedStopped_OpNotFinished</pre>
+     */
+    private boolean shouldCountIgnoredStartForRecording(int op, int uidMode) {
+        if (uidMode != MODE_IGNORED) {
+            return false;
+        }
+        return switch (op) {
+            // Sync with frameworks/av op codes for recording (see media/utils/ServiceUtilities.cpp)
+            // as we are specifically working around its... interesting behavior.
+            // Otherwise, some other potentially relevant ops would be:
+            //   OP_PHONE_CALL_MICROPHONE
+            //   OP_RECEIVE_AMBIENT_TRIGGER_AUDIO
+            //   OP_RECEIVE_EXPLICIT_USER_INTERACTION_AUDIO
+            //   OP_RECEIVE_SANDBOX_TRIGGER_AUDIO
+            //   OP_RECORD_AUDIO_SANDBOXED
+            case OP_RECORD_AUDIO,
+                 OP_RECORD_AUDIO_OUTPUT,
+                 OP_RECORD_AUDIO_HOTWORD,
+                 OP_RECORD_INCOMING_PHONE_AUDIO -> true;
+            default -> false;
+        };
+    }
+
+    /**
+     * Increment the counter for an existing unfinished started or paused operation.
+     * <br/>
+     * Like {@code started} and {@code createPaused}, but only increments the counter for an
+     * existing event; does not notify or start anything. If there are no existing events,
+     * this method does nothing.
+     * <br/>
+     * Only intended to be used for mic-related operations, as this is a hack to support them
+     * properly.
+     * @see #shouldCountIgnoredStartForRecording
+     */
+    // TODO(b/190517602)
+    // TODO(b/293603271)
+    // TODO(b/363915467)
+    // TODO(b/374800336)
+    // TODO(b/374869085)
+    // TODO(b/377407253)
+    @SuppressWarnings("GuardedBy") // Lock is held on mAppOpsService
+    public void maybeStartedOrPausedRecordingForExistingIncrementOnly(
+            int code, int uidMode, @NonNull IBinder clientId,
+            boolean isStarted) {
+        final String logMessage = !LOGV ? null : "startedOrPausedRecordingForExistingIncrementOnly:"
+                    + " code=" + code
+                    + " uidMode=" + uidMode
+                    + " packageName=" + parent.packageName
+                    + " clientId=" + clientId
+                    + " op=" + parent.op + ", isStarted=" + isStarted;
+        if (!shouldCountIgnoredStartForRecording(code, uidMode)) {
+            if (LOGV) {
+                Slog.v(TAG, logMessage
+                        + " " + Arrays.asList(new Throwable().getStackTrace()));
+            }
+            return;
+        }
+
+        ArrayMap<IBinder, InProgressStartOpEvent> events = isStarted
+                ? mInProgressEvents : mPausedInProgressEvents;
+
+        final int unfinishedStarts;
+        final InProgressStartOpEvent event;
+        if (events != null && ((event = events.get(clientId)) != null)) {
+            event.mNumUnfinishedStarts++;
+            unfinishedStarts = event.mNumUnfinishedStarts;
+        } else {
+            unfinishedStarts = -1;
+        }
+
+        if (LOGV) {
+            Slog.v(TAG, logMessage
+                    + " mNumUnfinishedStarts=" + unfinishedStarts
+                    + " " + Arrays.asList(new Throwable().getStackTrace()));
         }
     }
 
