@@ -3971,6 +3971,15 @@ public class AppOpsService extends IAppOpsService.Stub {
                                 + AppOpsManager.flagsToString(flags));
                     }
                     attributedOp.rejected(uidState.getState(), flags);
+                    try {
+                        attributedOp.maybeStartedOrPausedRecordingIncrementOnly(uidMode,
+                                clientId, virtualDeviceId, proxyUid, proxyPackageName,
+                                proxyAttributionTag, getPersistentId(proxyVirtualDeviceId),
+                                uidState.getState(), flags, attributionFlags, attributionChainId,
+                                /* isStarted */ !isRestricted);
+                    } catch (RemoteException e) {
+                        throw new RuntimeException(e);
+                    }
                     scheduleOpStartedIfNeededLocked(code, uid, packageName, attributionTag,
                             virtualDeviceId, flags, uidMode, startType, attributionFlags,
                             attributionChainId);

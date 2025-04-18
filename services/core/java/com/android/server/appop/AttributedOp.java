@@ -17,6 +17,11 @@
 package com.android.server.appop;
 
 import static android.app.AppOpsManager.MODE_ALLOWED;
+import static android.app.AppOpsManager.MODE_IGNORED;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO_HOTWORD;
+import static android.app.AppOpsManager.OP_RECORD_AUDIO_OUTPUT;
+import static android.app.AppOpsManager.OP_RECORD_INCOMING_PHONE_AUDIO;
 import static android.app.AppOpsManager.OnOpStartedListener.START_TYPE_RESUMED;
 import static android.app.AppOpsManager.makeKey;
 
@@ -30,6 +35,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.ArrayMap;
 import android.util.ArraySet;
+import android.util.Log;
 import android.util.LongSparseArray;
 import android.util.Pools;
 import android.util.Slog;
@@ -37,6 +43,7 @@ import android.util.Slog;
 import com.android.internal.util.function.pooled.PooledLambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
@@ -211,7 +218,7 @@ final class AttributedOp {
             int attributionChainId) throws RemoteException {
         startedOrPaused(clientId, virtualDeviceId, proxyUid, proxyPackageName, proxyAttributionTag,
                 proxyDeviceId, uidState, flags, attributionFlags, attributionChainId, false,
-                true);
+                true, false);
     }
 
     @SuppressWarnings("GuardedBy") // Lock is held on mAppOpsService
@@ -219,9 +226,10 @@ final class AttributedOp {
             @Nullable String proxyPackageName, @Nullable String proxyAttributionTag,
             @Nullable String proxyDeviceId, @AppOpsManager.UidState int uidState,
             @AppOpsManager.OpFlags int flags, @AppOpsManager.AttributionFlags int attributionFlags,
-            int attributionChainId, boolean triggeredByUidStateChange, boolean isStarted)
+            int attributionChainId, boolean triggeredByUidStateChange, boolean isStarted,
+            boolean incrementOnly)
             throws RemoteException {
-        if (!triggeredByUidStateChange && !parent.isRunning() && isStarted) {
+        if (!incrementOnly && !triggeredByUidStateChange && !parent.isRunning() && isStarted) {
             mAppOpsService.scheduleOpActiveChangedIfNeededLocked(parent.op, parent.uid,
                     parent.packageName, tag, virtualDeviceId, true, attributionFlags,
                     attributionChainId);
@@ -238,6 +246,13 @@ final class AttributedOp {
         long startTime = System.currentTimeMillis();
         InProgressStartOpEvent event = events.get(clientId);
         if (event == null) {
+            if (incrementOnly) {
+                // Quirk: If an existing event does not already exist, bail out. Otherwise, we fail
+                // CtsMediaAudioPermissionTests such as:
+                // testStartRecordForegroundServiceWithoutMicCapabilities_whenApi33_isSilenced
+                // TODO: Why...?
+                return;
+            }
             event = mAppOpsService.mInProgressStartOpEventPool.acquire(startTime,
                     SystemClock.elapsedRealtime(), clientId, tag, virtualDeviceId,
                     PooledLambda.obtainRunnable(AppOpsService::onClientDeath, this, clientId),
@@ -252,11 +267,99 @@ final class AttributedOp {
 
         event.mNumUnfinishedStarts++;
 
-        if (isStarted) {
+        if (!incrementOnly && isStarted) {
             mAppOpsService.mHistoricalRegistry.incrementOpAccessedCount(parent.op, parent.uid,
                     parent.packageName, persistentDeviceId, tag, uidState, flags, startTime,
                     attributionFlags, attributionChainId, DiscreteRegistry.ACCESS_TYPE_START_OP);
         }
+    }
+
+    /**
+     * <p>Whether or not to work around de-sync of app ops state for audio recording.</p>
+     *
+     * <p>There is a de-synchronization of the in-use state of audio recording between
+     * various system components resulting from a different conception of what constitutes
+     * "in use" across these components, along with some spaghettification / diffusion of
+     * responsibility that leads to improper accounting.</p>
+     *
+     * <p>Here are some of the involved components:
+     * <ul>
+     * <li><b>AppOps</b> (fw/b/../appop)<ul>
+     *   <li>Marks and tracks ops as started, finished, etc, guided by permission checks,
+     *     uid states, restrictions, and more.</li>
+     * </ul></li>
+     * <li><b>Permissions</b> (fw/b/../pm/permission)<ul>
+     *   <li>Notifies AppOps that an operation is started or completed. Alters this behavior
+     *   depending on whether a permission is "soft-denied" (e.g. mic access off globally).</li>
+     * </ul></li>
+     * <li><b>AudioPolicy</b> (fw/av/services/audiopolicy)<ul>
+     *   <li>Manages actual underlying state of audio input, providing silent audio when permissions
+     *   are "soft-denied", allowing a continuous audio stream which can be silenced and unsilenced
+     *   based on whether microphone access is allowed in general or the app tries to record
+     *   in the background.</li>
+     * </ul></li>
+     * </ul>
+     * </p>
+     *
+     * <p>An audio operation can be rejected when an application is in the background, but in this
+     * case, the app may be provided with silent audio that could be unsilenced later,
+     * so this type of rejection needs to be counted, too. This is necessary to pass this test
+     * (split to two lines due to length):</p>
+     * <pre>android.media.audio.cts.audiorecordpermissiontests.AudioRecordPermissionTests<br/>
+     * #testIfRecording_whenSecondRecordingSilencedStopped_OpNotFinished</pre>
+     */
+    private boolean shouldCountIgnoredStartForRecording(int uidMode) {
+        if (uidMode != MODE_IGNORED) {
+            return false;
+        }
+        return switch (parent.op) {
+            // Sync with frameworks/av op codes for recording (see media/utils/ServiceUtilities.cpp)
+            // as we are specifically working around its... interesting behavior.
+            // Otherwise, some other potentially relevant ops would be:
+            //   OP_PHONE_CALL_MICROPHONE
+            //   OP_RECEIVE_AMBIENT_TRIGGER_AUDIO
+            //   OP_RECEIVE_EXPLICIT_USER_INTERACTION_AUDIO
+            //   OP_RECEIVE_SANDBOX_TRIGGER_AUDIO
+            //   OP_RECORD_AUDIO_SANDBOXED
+            case OP_RECORD_AUDIO,
+                 OP_RECORD_AUDIO_OUTPUT,
+                 OP_RECORD_AUDIO_HOTWORD,
+                 OP_RECORD_INCOMING_PHONE_AUDIO -> true;
+            default -> false;
+        };
+    }
+
+    /**
+     * Increment the counter for an existing unfinished started or paused operation.
+     * <br/>
+     * Like {@code started} and {@code createPaused}, but only increments the counter for an
+     * existing event; does not notify or start anything. If there are no existing events,
+     * this method does nothing.
+     * <br/>
+     * Only intended to be used for mic-related operations, as this is a hack to support them
+     * properly.
+     * @see #shouldCountIgnoredStartForRecording
+     */
+    // TODO(b/190517602)
+    // TODO(b/293603271)
+    // TODO(b/363915467)
+    // TODO(b/374800336)
+    // TODO(b/374869085)
+    // TODO(b/377407253)
+    @SuppressWarnings("GuardedBy") // Lock is held on mAppOpsService
+    public void maybeStartedOrPausedRecordingIncrementOnly(int uidMode,
+            @NonNull IBinder clientId, int virtualDeviceId, int proxyUid,
+            @Nullable String proxyPackageName, @Nullable String proxyAttributionTag,
+            @Nullable String proxyDeviceId, @AppOpsManager.UidState int uidState,
+            @AppOpsManager.OpFlags int flags, @AppOpsManager.AttributionFlags int attributionFlags,
+            int attributionChainId, boolean isStarted)
+            throws RemoteException {
+        if (!shouldCountIgnoredStartForRecording(uidMode)) {
+            return;
+        }
+        startedOrPaused(clientId, virtualDeviceId, proxyUid, proxyPackageName, proxyAttributionTag,
+                proxyDeviceId, uidState, flags, attributionFlags, attributionChainId,
+                /* triggeredByUidStateChange */ false, isStarted, /* incrementOnly */ true);
     }
 
     public void doForAllInProgressStartOpEvents(Consumer<InProgressStartOpEvent> action) {
@@ -400,7 +503,7 @@ final class AttributedOp {
             int attributionChainId) throws RemoteException {
         startedOrPaused(clientId, virtualDeviceId, proxyUid, proxyPackageName, proxyAttributionTag,
                 proxyDeviceId, uidState, flags, attributionFlags, attributionChainId, false,
-                false);
+                false, false);
     }
 
     /**
@@ -527,12 +630,12 @@ final class AttributedOp {
                                 proxy.getUid(), proxy.getPackageName(), proxy.getAttributionTag(),
                                 proxy.getDeviceId(), newState, event.getFlags(),
                                 event.getAttributionFlags(), event.getAttributionChainId(), true,
-                                isRunning);
+                                isRunning, false);
                     } else {
                         startedOrPaused(event.getClientId(), event.getVirtualDeviceId(),
                                 Process.INVALID_UID, null, null, null,
                                 newState, event.getFlags(), event.getAttributionFlags(),
-                                event.getAttributionChainId(), true, isRunning);
+                                event.getAttributionChainId(), true, isRunning, false);
                     }
 
                     events = isRunning ? mInProgressEvents : mPausedInProgressEvents;
