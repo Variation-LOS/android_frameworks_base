@@ -70,6 +70,41 @@
       "parentUuid": "a0dfd1dc_36361fe6",
       "revId": "7223775f024df978079d0be03a7a0bb686bfe9ad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a47e26ea_de948289",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2025-04-18T03:20:02Z",
+      "side": 1,
+      "message": "Please abandon and see https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/427710 (which is not well-tested yet)",
+      "revId": "7223775f024df978079d0be03a7a0bb686bfe9ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99bb58a1_736fec8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2025-04-18T03:20:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "37438c2d_3cbbff01",
+      "revId": "7223775f024df978079d0be03a7a0bb686bfe9ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
