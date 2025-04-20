@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d9e3d4e_50fd3714",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2025-04-20T09:28:00Z",
+      "side": 1,
+      "message": "This \"quirk\" sounds like a big deal actually.\n\nTo test (not yet done):\n1. Start three recordings from the background. In theory these are all soft denied and maybe no counter is ever increased, but fw/av thinks it is. They should all be silenced, at least at start. Pending finishes is now 3.\n2. Start two recordings from the foreground. They should not be silenced. Entering FG triggers each BG-started recording to be unsilenced, which starts them anew.\n3. Stop each of the background recordings one by one. App ops state should be active after each.\n4. Stop each foreground recording one by one. App ops state should remain active until the last is stopped.\n\nSee [this comment](https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/427710/comment/7bf6b3e1_7247df8f/).\n\nIs there a way to reliably get the count to increase, or maybe better to *not increase*? I did try the former before and failed. A CTS audio permission test wasn\u0027t happy. Maybe we could make the app op not count somehow if recording is restricted (paused), to keep that behavior in line with rejected ops, both of which should functionally be silenced. Then when uid state changes, we start them all and get an actual count going.",
+      "revId": "35f09310d22800d79e0b2050783468be9e52e7ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
