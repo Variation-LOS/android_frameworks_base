@@ -223,7 +223,7 @@ import java.util.function.Consumer;
 
 public class AppOpsService extends IAppOpsService.Stub {
     static final String TAG = "AppOps";
-    static final boolean DEBUG = false;
+    static final boolean DEBUG = true;
 
     /**
      * Used for data access validation collection, we wish to only log a specific access once

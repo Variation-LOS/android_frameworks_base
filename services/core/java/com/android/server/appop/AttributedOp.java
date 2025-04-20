@@ -25,6 +25,8 @@ import static android.app.AppOpsManager.OP_RECORD_INCOMING_PHONE_AUDIO;
 import static android.app.AppOpsManager.OnOpStartedListener.START_TYPE_RESUMED;
 import static android.app.AppOpsManager.makeKey;
 
+import static com.android.server.appop.AppOpsService.TAG;
+
 import android.annotation.IntRange;
 import android.annotation.NonNull;
 import android.annotation.Nullable;
@@ -267,6 +269,27 @@ final class AttributedOp {
 
         event.mNumUnfinishedStarts++;
 
+        final String logMessage = "startedOrPaused:"
+                + (incrementOnly ? " incrementOnly" : "")
+                + " mNumUnfinishedStarts=" + event.mNumUnfinishedStarts
+                + " packageName=" + parent.packageName
+                + " op=" + parent.op
+                + " triggeredByUidStateChange=" + triggeredByUidStateChange
+                + " isStarted=" + isStarted
+                + " clientId=" + clientId
+                + " virtualDeviceId=" + virtualDeviceId
+                + " proxyUid=" + proxyUid
+                + " proxyPackageName=" + proxyPackageName
+                + " proxyAttributionTag=" + proxyAttributionTag
+                + " proxyDeviceId=" + proxyDeviceId
+                + " uidState=" + uidState
+                + " flags=" + flags
+                + " attributionFlags=" + attributionFlags
+                + " attributionChainId=" + attributionChainId;
+
+        Slog.w(TAG, logMessage
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
+
         if (!incrementOnly && isStarted) {
             mAppOpsService.mHistoricalRegistry.incrementOpAccessedCount(parent.op, parent.uid,
                     parent.packageName, persistentDeviceId, tag, uidState, flags, startTime,
@@ -409,6 +432,12 @@ final class AttributedOp {
     @SuppressWarnings("GuardedBy") // Lock is held on mAppOpsService
     private void finishOrPause(@NonNull IBinder clientId, boolean triggeredByUidStateChange,
             boolean isPausing) {
+        Slog.w(TAG, "finishOrPause: packageName=" + parent.packageName
+                + " clientId=" + clientId
+                + " op=" + parent.op
+                + " isPausing=" + isPausing
+                + " triggeredByUidStateChange=" + triggeredByUidStateChange
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         int indexOfToken = isRunning() ? mInProgressEvents.indexOfKey(clientId) : -1;
         if (indexOfToken < 0) {
             finishPossiblyPaused(clientId, isPausing);
@@ -418,6 +447,10 @@ final class AttributedOp {
         InProgressStartOpEvent event = mInProgressEvents.valueAt(indexOfToken);
         if (!isPausing) {
             event.mNumUnfinishedStarts--;
+            Slog.w(TAG, "finishOrPause: packageName=" + parent.packageName
+                    + " clientId=" + clientId
+                    + " op=" + parent.op
+                    + " mNumUnfinishedStarts=" + event.mNumUnfinishedStarts);
         }
         // If we are pausing, create a NoteOpEvent, but don't change the InProgress event
         if (event.mNumUnfinishedStarts == 0 || isPausing) {
@@ -467,6 +500,11 @@ final class AttributedOp {
     // Finish or pause (no-op) an already paused op
     @SuppressWarnings("GuardedBy") // Lock is held on mAppOpsService
     private void finishPossiblyPaused(@NonNull IBinder clientId, boolean isPausing) {
+        Slog.w(TAG, "finishPossiblyPaused: packageName=" + parent.packageName
+                + " clientId=" + clientId
+                + " op=" + parent.op
+                + " isPausing=" + isPausing
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         if (!isPaused()) {
             Slog.wtf(AppOpsService.TAG, "No ops running or paused");
             return;
@@ -484,6 +522,10 @@ final class AttributedOp {
         // no need to record a paused event finishing.
         InProgressStartOpEvent event = mPausedInProgressEvents.valueAt(indexOfToken);
         event.mNumUnfinishedStarts--;
+        Slog.w(TAG, "finishPossiblyPaused: packageName=" + parent.packageName
+                + " clientId=" + clientId
+                + " op=" + parent.op
+                + " mNumUnfinishedStarts=" + event.mNumUnfinishedStarts);
         if (event.mNumUnfinishedStarts == 0) {
             mPausedInProgressEvents.removeAt(indexOfToken);
             mAppOpsService.mInProgressStartOpEventPool.release(event);
@@ -510,6 +552,10 @@ final class AttributedOp {
      * Pause all currently started ops. This will create a HistoricalRegistry
      */
     public void pause() {
+        Slog.w(TAG, "pause: packageName=" + parent.packageName
+                + " op=" + parent.op
+                + " isRunning()=" + isRunning()
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         if (!isRunning()) {
             return;
         }
@@ -535,6 +581,10 @@ final class AttributedOp {
      * times, but keep all other values the same
      */
     public void resume() {
+        Slog.w(TAG, "resume: packageName=" + parent.packageName
+                + " op=" + parent.op
+                + " isPaused()=" + isPaused()
+                + ": " + Arrays.asList(new Throwable().getStackTrace()));
         if (!isPaused()) {
             return;
         }
@@ -586,6 +636,13 @@ final class AttributedOp {
             InProgressStartOpEvent deadEvent = events.get(clientId);
             if (deadEvent != null) {
                 deadEvent.mNumUnfinishedStarts = 1;
+                Slog.w(TAG, "onClientDeath: packageName=" + parent.packageName
+                        + " clientId=" + clientId
+                        + " op=" + parent.op
+                        + " isRunning()=" + isRunning()
+                        + " isPaused=" + isPaused()
+                        + " mNumUnfinishedStarts=" + deadEvent.mNumUnfinishedStarts
+                        + ": " + Arrays.asList(new Throwable().getStackTrace()));
             }
 
             finished(clientId);
@@ -642,6 +699,13 @@ final class AttributedOp {
                     InProgressStartOpEvent newEvent = events.get(binders.get(i));
                     if (newEvent != null) {
                         newEvent.mNumUnfinishedStarts += numPreviousUnfinishedStarts - 1;
+                        Slog.w(TAG, "onUidStateChanged: packageName=" + parent.packageName
+                                + " op=" + parent.op
+                                + " isRunning()=" + isRunning()
+                                + " isPaused=" + isPaused()
+                                + " mNumUnfinishedStarts=" + newEvent.mNumUnfinishedStarts
+                                + ": " + Arrays.asList(new Throwable().getStackTrace()));
+
                     }
                 } catch (RemoteException e) {
                     if (AppOpsService.DEBUG) {
