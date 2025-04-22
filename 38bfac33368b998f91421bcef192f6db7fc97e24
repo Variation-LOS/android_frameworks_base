@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec1097fb_7fb4849f",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-22T17:06:42Z",
+      "side": 1,
+      "message": "out of order",
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "211673bd_eb65312d",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-22T17:06:42Z",
+      "side": 1,
+      "message": "```suggestion\n       final String serviceName \u003d IPowerShare.DESCRIPTOR + \"/default\";\n```",
+      "range": {
+        "startLine": 222,
+        "startChar": 34,
+        "endLine": 222,
+        "endChar": 81
+      },
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7282c8ab_4b549135",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-22T17:06:42Z",
+      "side": 1,
+      "message": "spaces, not tabs",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 1
+      },
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
