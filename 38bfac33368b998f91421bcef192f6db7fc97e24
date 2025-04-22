@@ -36,6 +36,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74a717dc_40414199",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35199
+      },
+      "writtenOn": "2025-04-22T18:01:00Z",
+      "side": 1,
+      "message": "im pretty that this is a bad idea but what about something like:\n\nprivate synchronized IPowerShare getPowerShare() {\n    boolean useNewMethod \u003d SystemProperties.getBoolean(\"persist.powershare.use_new\", false);\n\n    if (!useNewMethod) {\n        // HIDL Approach\n        try {\n            return IPowerShare.getService();\n        } catch (RemoteException ex) {\n            ex.printStackTrace();\n        } catch (NoSuchElementException ex) {\n            // service not available\n        }\n        return null;\n    } else {\n        // AIDL Approach\n             final String serviceName \u003d IPowerShare.DESCRIPTOR + \"/default\";\n\n        try {\n            return IPowerShare.Stub.asInterface(\n                android.os.ServiceManager.getService(serviceName)\n            );\n        } catch (Exception e) {\n            // Handle both RemoteException and ServiceNotFoundException\n            Log.e(TAG, \"Failed to get PowerShare service\", e);\n            return null;\n        }\n    }\n}",
+      "parentUuid": "81951e63_874634bf",
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec1097fb_7fb4849f",
