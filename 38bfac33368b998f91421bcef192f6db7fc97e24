@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0cdd459_06469541",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-22T17:15:24Z",
+      "side": 1,
+      "message": "Also, this way you\u0027re again killing hidl support.",
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec1097fb_7fb4849f",
