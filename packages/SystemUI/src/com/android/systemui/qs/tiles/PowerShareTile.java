@@ -24,7 +24,9 @@ import android.os.BatteryManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.service.quicksettings.Tile;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -45,7 +47,7 @@ import com.android.systemui.statusbar.policy.BatteryController;
 
 import org.lineageos.internal.logging.LineageMetricsLogger;
 
-import vendor.lineage.powershare.V1_0.IPowerShare;
+import vendor.lineage.powershare.IPowerShare;
 
 import java.util.NoSuchElementException;
 
@@ -217,15 +219,16 @@ public class PowerShareTile extends QSTileImpl<BooleanState>
     }
 
     private synchronized IPowerShare getPowerShare() {
-        try {
-            return IPowerShare.getService();
-        } catch (RemoteException ex) {
-            ex.printStackTrace();
-        } catch (NoSuchElementException ex) {
-            // service not available
-        }
+        final String serviceName = IPowerShare.DESCRIPTOR + "/default";
 
-        return null;
+        try {
+            return IPowerShare.Stub.asInterface(
+                    android.os.ServiceManager.getService(serviceName));
+        } catch (Exception e) {
+            // Handle both RemoteException and ServiceNotFoundException
+            Log.e(TAG, "Failed to get PowerShare service", e);
+            return null;
+        }
     }
 
     private int getMinBatteryLevel() {
