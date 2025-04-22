@@ -53,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03877a5a_fd54b5a3",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 35199
+      },
+      "writtenOn": "2025-04-22T17:25:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec1097fb_7fb4849f",
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "211673bd_eb65312d",
@@ -76,6 +94,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69596b89_9487ad78",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 35199
+      },
+      "writtenOn": "2025-04-22T17:25:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "211673bd_eb65312d",
+      "range": {
+        "startLine": 222,
+        "startChar": 34,
+        "endLine": 222,
+        "endChar": 81
+      },
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7282c8ab_4b549135",
@@ -89,6 +131,30 @@
       "writtenOn": "2025-04-22T17:06:42Z",
       "side": 1,
       "message": "spaces, not tabs",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 1
+      },
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cf4f092_75fced11",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/PowerShareTile.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 35199
+      },
+      "writtenOn": "2025-04-22T17:25:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7282c8ab_4b549135",
       "range": {
         "startLine": 223,
         "startChar": 0,
