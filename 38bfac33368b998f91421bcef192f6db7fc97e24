@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81951e63_874634bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35199
+      },
+      "writtenOn": "2025-04-22T17:19:17Z",
+      "side": 1,
+      "message": "what do you suggest doing? should i keep the code for HIDL and just add AIDL?",
+      "parentUuid": "e0cdd459_06469541",
+      "revId": "38bfac33368b998f91421bcef192f6db7fc97e24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec1097fb_7fb4849f",
