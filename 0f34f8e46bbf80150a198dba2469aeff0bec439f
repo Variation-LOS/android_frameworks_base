@@ -16,6 +16,24 @@
       "message": "this line, which has been added in PS2, is wrong: I have omitted it on purpose in my 1st patch-set! In the AOSP commit 1d18955361236ad532e94dc6a31fb8eec58c124a, the line \u0027mOrientationListener.disable();\u0027 was also present in the previous/replaced code, but in our code, the line was removed in commit e6e5720dcebb992a28c117b0e153ff11301a3e42 \"Check orientation when retrieving FP location\", so we should not wrongly add it again.",
       "revId": "0f34f8e46bbf80150a198dba2469aeff0bec439f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd11f645_a9c2fb9e",
+        "filename": "packages/SystemUI/src/com/android/systemui/biometrics/AuthController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 17656
+      },
+      "writtenOn": "2025-04-26T15:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7800bc9_87dd3d92",
+      "revId": "0f34f8e46bbf80150a198dba2469aeff0bec439f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
