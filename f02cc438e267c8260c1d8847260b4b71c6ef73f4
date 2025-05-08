@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7303eda_ec4630e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-08T15:18:02Z",
+      "side": 1,
+      "message": "https://github.com/Genymobile/scrcpy/issues/5523",
+      "revId": "f02cc438e267c8260c1d8847260b4b71c6ef73f4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
