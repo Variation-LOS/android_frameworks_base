@@ -51,6 +51,24 @@
       "message": "Google did the same change in next (minus wording), so it\u0027ll be a simple --skip",
       "revId": "7614b960769f8da39dd82501b8238c5e2b80ea27",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0eef6245_7a1cea88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2025-05-09T19:54:06Z",
+      "side": 1,
+      "message": "yup found it here: https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/com/android/internal/os/RuntimeInit.java#178\n\nso lets abandon this if it will likely be in next major?",
+      "parentUuid": "c82e1ff0_1e18dba7",
+      "revId": "7614b960769f8da39dd82501b8238c5e2b80ea27",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
