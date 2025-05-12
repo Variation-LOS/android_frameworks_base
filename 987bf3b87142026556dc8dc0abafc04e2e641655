@@ -69,6 +69,24 @@
       "parentUuid": "a22ac4e6_e486db70",
       "revId": "987bf3b87142026556dc8dc0abafc04e2e641655",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "beaf1e8a_109e1aaa",
+        "filename": "packages/SystemUI/customization/src/com/android/systemui/shared/clocks/ClockRegistry.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-12T16:19:05Z",
+      "side": 1,
+      "message": "No, just leave it like that and drop the commit",
+      "parentUuid": "b3c3c69b_96132274",
+      "revId": "987bf3b87142026556dc8dc0abafc04e2e641655",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
