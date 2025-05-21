@@ -92,7 +92,7 @@ public class HeadsUpAppearanceController extends ViewController<HeadsUpStatusBar
     private final PhoneStatusBarTransitions mPhoneStatusBarTransitions;
     private final CommandQueue mCommandQueue;
     private final NotificationWakeUpCoordinator mWakeUpCoordinator;
-
+    
     private final View mClockView;
     private final Optional<View> mOperatorNameViewOptional;
 
@@ -112,6 +112,8 @@ public class HeadsUpAppearanceController extends ViewController<HeadsUpStatusBar
     private boolean mAnimationsEnabled = true;
     private final KeyguardStateController mKeyguardStateController;
     private final HeadsUpNotificationIconInteractor mHeadsUpNotificationIconInteractor;
+
+    private LyricViewController mLyricViewController;
 
     @VisibleForTesting
     @Inject
@@ -248,6 +250,10 @@ public class HeadsUpAppearanceController extends ViewController<HeadsUpStatusBar
         }
     }
 
+    public void setLyricViewController(LyricViewController controller) {
+        mLyricViewController = controller;
+    }
+
     private void setPinnedStatus(PinnedStatus pinnedStatus) {
         if (mPinnedStatus != pinnedStatus) {
             View clockView = mClockController.getClock();
@@ -261,11 +267,14 @@ public class HeadsUpAppearanceController extends ViewController<HeadsUpStatusBar
                     hide(mClockView, View.INVISIBLE);
                 }
                 mOperatorNameViewOptional.ifPresent(view -> hide(view, View.INVISIBLE));
-            } else {
-                if (!StatusBarRootModernization.isEnabled() && !notLeftClock) {
-                    show(mClockView);
+                if (mLyricViewController != null) {
+                    mLyricViewController.hideLyricView(mAnimationsEnabled);
                 }
+            } else {
                 mOperatorNameViewOptional.ifPresent(this::show);
+                if (mLyricViewController != null) {
+                    mLyricViewController.hideLyricView(mAnimationsEnabled);
+                }
                 hide(mView, View.GONE, () -> {
                     updateParentClipping(true /* shouldClip */);
                 });
